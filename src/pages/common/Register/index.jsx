@@ -1,10 +1,24 @@
 import { Button, Form, Input } from 'antd'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { registerUser } from '../../../apiCalls/users';
+import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
-  const onFinish = (values) => {
-    console.log(values);
+  const navigate = useNavigate();
+  const onFinish = async (values) => {
+    try {
+      const response = await registerUser(values);
+      if (response.success) {
+        toast.success(response.message);
+        navigate('/login');
+      } else {
+        toast.error(response.message);
+      }
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
   };
   return (
     <div className='flex justify-center items-center h-screen w-screen'>
@@ -15,8 +29,8 @@ function Register() {
         <Form.Item label="Name" name="name" rules={[{ required: true, message: 'Please input your name!' }]}>
           <Input placeholder='Enter your name' type='text' className='input' />
         </Form.Item>
-        <Form.Item label="Username" name="username" rules={[{ required: true, message: 'Please input your username!' }]}>
-          <Input placeholder='Enter your username' type='text' className='input' />
+        <Form.Item label="Email" name="email" rules={[{ required: true, message: 'Please input your email!' }]}>
+          <Input placeholder='Enter your email' type='email' className='input' />
         </Form.Item>
         <Form.Item label="Password" name="password" rules={[{ required: true, message: 'Please input your password!' }]}>
           <Input.Password placeholder='Enter your password' type='password' className='input' />
