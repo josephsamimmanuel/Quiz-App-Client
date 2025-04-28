@@ -4,20 +4,28 @@ import { Link } from 'react-router-dom'
 import { loginUser } from '../../../apiCalls/users';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../../redux/users';
 
 function Login() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const onFinish = async (values) => {
     try {
+      toast.loading('Logging in...');
       const response = await loginUser(values);
       if (response.success) {
-        localStorage.setItem('token', response.token);
-        navigate('/');
+        sessionStorage.setItem('token', response.data.token);
+        dispatch(setUser(response?.data));
+        navigate('/home');
+        toast.dismiss();
         toast.success(response.message);
       } else {
+        toast.dismiss();
         toast.error(response.message);
       }
     } catch (error) {
+      toast.dismiss();
       toast.error(error.response.data.message);
     }
   };

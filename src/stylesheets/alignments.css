@@ -2,6 +2,14 @@
   height: 100vh;
 }
 
+.h-full {
+  height: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
 .h-75 {
   height: 75vh;
 }
@@ -106,3 +114,9 @@
 .mb-4 {
   margin-bottom: 1rem;
 }
+
+.p-2 {
+  padding: 1rem;
+}
+
+

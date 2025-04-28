@@ -1,5 +1,5 @@
 import axiosInstance from "./index";
-import { REGISTER_USER, LOGIN_USER, LOGOUT_USER } from "../utils/constants";
+import { REGISTER_USER, LOGIN_USER, LOGOUT_USER, GET_USER_DETAILS } from "../utils/constants";
 
 export const registerUser = async (userData) => {
     try {
@@ -27,3 +27,13 @@ export const logoutUser = async () => {
         return error.response.data;
     }
 };
+
+export const getUserDetails = async () => {
+    try {
+        const response = await axiosInstance.get(GET_USER_DETAILS);
+        return response.data;
+    } catch (error) {
+        return error.response.data;
+    }
+};
+
