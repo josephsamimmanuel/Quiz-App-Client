@@ -18,44 +18,24 @@ function Login() {
     try {
       toast.loading(t('TOAST_MESSAGES.LOGGING_IN'));
       const response = await loginUser(values);
-      console.log('Login response:', response);
-      
       if (response.success) {
-        const token = response.data.token;
-        console.log('Token received:', token);
-        
-        sessionStorage.setItem('token', token);
-        console.log('Token stored in sessionStorage:', sessionStorage.getItem('token'));
-        
+        sessionStorage.setItem('token', response.data.token);
         dispatch(setUser(response?.data));
         navigate(ROUTES.PROTECTED.USER.HOME);
         toast.dismiss();
         toast.success(response.message);
       } else {
         toast.dismiss();
-        toast.error(response.message || 'Login failed');
+        toast.error(response.message);
       }
     } catch (error) {
-      console.error('Login error:', error);
       toast.dismiss();
-      
-      // Handle different types of errors
-      if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
-        toast.error(error.response.data?.message || 'Login failed');
-      } else if (error.request) {
-        // The request was made but no response was received
-        toast.error('No response from server. Please check your connection.');
-      } else {
-        // Something happened in setting up the request that triggered an Error
-        toast.error('An error occurred. Please try again.');
-      }
+      toast.error(error.response.data.message);
     }
   };
 
   return (
-    <div className='flex justify-center items-center h-screen w-screen '>
+    <div className='flex justify-center items-center h-screen w-screen'>
       <div className='card w-25'>
         <h1 className='text-xl text-center'>{t('LOGIN.PAGE_TITLE')}</h1>
         <hr className='my-4'/>
