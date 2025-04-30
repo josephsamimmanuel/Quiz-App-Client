@@ -18,8 +18,15 @@ function Login() {
     try {
       toast.loading(t('TOAST_MESSAGES.LOGGING_IN'));
       const response = await loginUser(values);
+      console.log('Login response:', response); // Debug log
+      
       if (response.success) {
-        sessionStorage.setItem('token', response.data.token);
+        const token = response.data.token;
+        console.log('Token received:', token); // Debug log
+        
+        sessionStorage.setItem('token', token);
+        console.log('Token stored in sessionStorage:', sessionStorage.getItem('token')); // Debug log
+        
         dispatch(setUser(response?.data));
         navigate(ROUTES.PROTECTED.USER.HOME);
         toast.dismiss();
@@ -29,13 +36,14 @@ function Login() {
         toast.error(response.message);
       }
     } catch (error) {
+      console.error('Login error:', error); // Debug log
       toast.dismiss();
-      toast.error(error.response.data.message);
+      toast.error(error.response?.data?.message || 'Login failed');
     }
   };
 
   return (
-    <div className='flex justify-center items-center h-screen w-screen'>
+    <div className='flex justify-center items-center h-screen w-screen '>
       <div className='card w-25'>
         <h1 className='text-xl text-center'>{t('LOGIN.PAGE_TITLE')}</h1>
         <hr className='my-4'/>
