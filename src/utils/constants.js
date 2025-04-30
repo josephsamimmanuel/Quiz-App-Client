@@ -1,4 +1,6 @@
-export const BASE_URL = "http://localhost:7777/api";
+// export const BASE_URL = "http://localhost:7777/api";
+export const BASE_URL = "https://quiz-app-server-5u1d.onrender.com";
+
 
 export const REGISTER_USER = `${BASE_URL}/users/register`;
 export const LOGIN_USER = `${BASE_URL}/users/login`;
