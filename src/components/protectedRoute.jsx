@@ -156,9 +156,9 @@ function ProtectedRoute() {
               <i className="ri-close-circle-line" style={{fontSize: '24px'}} onClick={() => setCollapsed(!collapsed)}></i> : 
               <i className="ri-menu-2-line" style={{fontSize: '24px'}} onClick={() => setCollapsed(!collapsed)}></i>
             }
-            <LanguageSwitcher />
             <h1 className='text-2xl font-bold'>{t('APP_NAME')}</h1>
             <div className='flex items-center gap-1'>
+            <LanguageSwitcher />
               <h1 className='text-lg underline'>{user?.name || user?.user?.name}</h1>
             </div>
           </div>
