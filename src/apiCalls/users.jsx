@@ -6,7 +6,10 @@ export const registerUser = async (userData) => {
         const response = await axiosInstance.post(REGISTER_USER, userData);
         return response.data;
     } catch (error) {
-        return error.response.data;
+        if (error.response) {
+            return error.response.data;
+        }
+        throw error;
     }
 };
 
@@ -15,7 +18,10 @@ export const loginUser = async (userData) => {
         const response = await axiosInstance.post(LOGIN_USER, userData);
         return response.data;
     } catch (error) {
-        return error.response.data;
+        if (error.response) {
+            return error.response.data;
+        }
+        throw error;
     }
 };
 

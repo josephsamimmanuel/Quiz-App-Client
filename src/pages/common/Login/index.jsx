@@ -18,14 +18,14 @@ function Login() {
     try {
       toast.loading(t('TOAST_MESSAGES.LOGGING_IN'));
       const response = await loginUser(values);
-      console.log('Login response:', response); // Debug log
+      console.log('Login response:', response);
       
       if (response.success) {
         const token = response.data.token;
-        console.log('Token received:', token); // Debug log
+        console.log('Token received:', token);
         
         sessionStorage.setItem('token', token);
-        console.log('Token stored in sessionStorage:', sessionStorage.getItem('token')); // Debug log
+        console.log('Token stored in sessionStorage:', sessionStorage.getItem('token'));
         
         dispatch(setUser(response?.data));
         navigate(ROUTES.PROTECTED.USER.HOME);
@@ -33,12 +33,24 @@ function Login() {
         toast.success(response.message);
       } else {
         toast.dismiss();
-        toast.error(response.message);
+        toast.error(response.message || 'Login failed');
       }
     } catch (error) {
-      console.error('Login error:', error); // Debug log
+      console.error('Login error:', error);
       toast.dismiss();
-      toast.error(error.response?.data?.message || 'Login failed');
+      
+      // Handle different types of errors
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        toast.error(error.response.data?.message || 'Login failed');
+      } else if (error.request) {
+        // The request was made but no response was received
+        toast.error('No response from server. Please check your connection.');
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        toast.error('An error occurred. Please try again.');
+      }
     }
   };
 
