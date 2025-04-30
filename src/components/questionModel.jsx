@@ -5,6 +5,7 @@ import { toast } from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setQuestions } from '../redux/question';
+import { QUESTION_MODEL } from '../utils/constants';
 
 function QuestionModel({ setShowModal, questionData, fetchAllQuestions }) {
     const [form] = Form.useForm();
@@ -70,69 +71,69 @@ function QuestionModel({ setShowModal, questionData, fetchAllQuestions }) {
                 preserve={false}
             >
                 <Form.Item 
-                    label='Question' 
+                    label={QUESTION_MODEL.QUESTION} 
                     name='question' 
-                    rules={[{ required: true, message: 'Please enter the question' }]}
+                    rules={[{ required: true, message: QUESTION_MODEL.FORM_MESSAGE.QUESTION }]}
                 >
-                    <Input type='text' placeholder='Enter Question' />
+                    <Input type='text' placeholder={QUESTION_MODEL.QUESTION_PLACEHOLDER} />
                 </Form.Item>
                 <Form.Item 
-                    label='Answer' 
+                    label={QUESTION_MODEL.ANSWER} 
                     name='answer' 
-                    rules={[{ required: true, message: 'Please enter the answer' }]}
+                    rules={[{ required: true, message: QUESTION_MODEL.FORM_MESSAGE.ANSWER }]}
                 >
-                    <Input type='text' placeholder='Enter Answer' />
+                    <Input type='text' placeholder={QUESTION_MODEL.ANSWER_PLACEHOLDER} />
                 </Form.Item>
                 <Form.Item 
-                    label='Explanation' 
+                    label={QUESTION_MODEL.EXPLANATION} 
                     name='explanation'
                 >
-                    <Input type='text' placeholder='Enter Explanation' />
+                    <Input type='text' placeholder={QUESTION_MODEL.EXPLANATION_PLACEHOLDER} />
                 </Form.Item>
-                <Form.Item label='Options'>
+                <Form.Item label={QUESTION_MODEL.OPTIONS}>
                     <Row gutter={[16, 16]} className='mb-2'>
                         <Col span={12}>
                             <Form.Item 
                                 name='option1' 
-                                rules={[{ required: true, message: 'Option 1 is required' }]} 
+                                rules={[{ required: true, message: QUESTION_MODEL.FORM_MESSAGE.OPTION_1 }]} 
                                 noStyle
                             >
-                                <Input type='text' placeholder='Enter Option 1' />
+                                <Input type='text' placeholder={QUESTION_MODEL.OPTIONS_PLACEHOLDER.OPTION_1} />
                             </Form.Item>
                         </Col>
                         <Col span={12}>
                             <Form.Item 
                                 name='option2' 
-                                rules={[{ required: true, message: 'Option 2 is required' }]} 
+                                rules={[{ required: true, message: QUESTION_MODEL.OPTIONS_MESSAGE.OPTION_2 }]} 
                                 noStyle
                             >
-                                <Input type='text' placeholder='Enter Option 2' />
+                                <Input type='text' placeholder={QUESTION_MODEL.OPTIONS_PLACEHOLDER.OPTION_2} />
                             </Form.Item>
                         </Col>
                         <Col span={12}>
                             <Form.Item 
                                 name='option3' 
-                                rules={[{ required: true, message: 'Option 3 is required' }]} 
+                                rules={[{ required: true, message: QUESTION_MODEL.OPTIONS_MESSAGE.OPTION_3 }]} 
                                 noStyle
                             >
-                                <Input type='text' placeholder='Enter Option 3' />
+                                <Input type='text' placeholder={QUESTION_MODEL.OPTIONS_PLACEHOLDER.OPTION_3} />
                             </Form.Item>
                         </Col>
                         <Col span={12}>
                             <Form.Item 
                                 name='option4' 
-                                rules={[{ required: true, message: 'Option 4 is required' }]} 
+                                rules={[{ required: true, message: QUESTION_MODEL.OPTIONS_MESSAGE.OPTION_4 }]} 
                                 noStyle
                             >
-                                <Input type='text' placeholder='Enter Option 4' />
+                                <Input type='text' placeholder={QUESTION_MODEL.OPTIONS_PLACEHOLDER.OPTION_4} />
                             </Form.Item>
                         </Col>
                     </Row>
                 </Form.Item>
                 <div className='flex justify-end gap-1'>
-                    <Button type='default' onClick={() => setShowModal(false)}>Cancel</Button>
+                    <Button type='default' onClick={() => setShowModal(false)}>{QUESTION_MODEL.CANCEL_BUTTON}</Button>
                     <Button type='primary' htmlType='submit'>
-                        {questionData ? 'Update' : 'Save'}
+                        {questionData ? QUESTION_MODEL.UPDATE_BUTTON : QUESTION_MODEL.SAVE_BUTTON}
                     </Button>
                 </div>
             </Form>

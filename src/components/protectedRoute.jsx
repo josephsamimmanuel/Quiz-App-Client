@@ -5,8 +5,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setUser } from '../redux/users'
 import { toast } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
+import { APP_NAME, ROUTES } from '../utils/constants'
+import { useTranslation } from 'react-i18next'
+import LanguageSwitcher from './LanguageSwitcher'
 
 function ProtectedRoute() {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state?.user?.user);
@@ -16,76 +20,75 @@ function ProtectedRoute() {
 
   const userMenu = [
     {
-      title: 'Home',
-      paths: ['/home'],
+      title: t('QUESTION_MODEL.MENU.HOME'),
+      paths: [ROUTES.PROTECTED.USER.HOME],
       icon: <i className="ri-home-8-line" style={{fontSize: '24px'}}></i>,
-      onClick: () => navigate('/home')
+      onClick: () => navigate(ROUTES.PROTECTED.USER.HOME)
     },
     {
-      title: 'Reports',
-      paths: ['/user/reports'],
+      title: t('QUESTION_MODEL.MENU.REPORTS'),
+      paths: [ROUTES.PROTECTED.USER.REPORTS],
       icon: <i className="ri-file-text-line" style={{fontSize: '24px'}}></i>,
-      onClick: () => navigate('/user/reports')
+      onClick: () => navigate(ROUTES.PROTECTED.USER.REPORTS)
     },
     {
-      title: 'Profile',
-      paths: ['/profile'],
+      title: t('QUESTION_MODEL.MENU.PROFILE'),
+      paths: [ROUTES.PROTECTED.USER.PROFILE],
       icon: <i className="ri-user-line" style={{fontSize: '24px'}}></i>,
-      onClick: () => navigate('/profile')
+      onClick: () => navigate(ROUTES.PROTECTED.USER.PROFILE)
     },
     {
-      title: 'Logout',
-      paths: ['/logout'],
+      title: t('QUESTION_MODEL.MENU.LOGOUT'),
+      paths: [ROUTES.COMMON.LOGOUT],
       icon: <i className="ri-logout-box-line" style={{fontSize: '24px'}}></i>,
       onClick: () => {
         sessionStorage.removeItem('token');
-        navigate('/login');
+        navigate(ROUTES.COMMON.LOGIN);
       }
     }
   ];
 
   const adminMenu = [
     {
-      title: 'Home',
-      paths: ['/home'],
+      title: t('QUESTION_MODEL.MENU.HOME'),
+      paths: [ROUTES.PROTECTED.USER.HOME],
       icon: <i className="ri-home-8-line" style={{fontSize: '24px'}}></i>,
-      onClick: () => navigate('/home')
+      onClick: () => navigate(ROUTES.PROTECTED.USER.HOME)
     },
     {
-      title: 'Exams',
-      paths: ['/admin/exams', '/admin/exams/add', '/admin/exams/:id'],
-      icon: <i class="ri-file-list-line" style={{fontSize: '24px'}}></i>,
-      onClick: () => navigate('/admin/exams')
+      title: t('QUESTION_MODEL.MENU.EXAMS'),
+      paths: [ROUTES.PROTECTED.ADMIN.EXAMS, ROUTES.PROTECTED.ADMIN.ADD_EXAM, ROUTES.PROTECTED.ADMIN.EDIT_EXAM],
+      icon: <i className="ri-file-list-line" style={{fontSize: '24px'}}></i>,
+      onClick: () => navigate(ROUTES.PROTECTED.ADMIN.EXAMS)
     },
     {
-      title: 'Reports',
-      paths: ['/admin/reports'],
+      title: t('QUESTION_MODEL.MENU.REPORTS'),
+      paths: [ROUTES.PROTECTED.ADMIN.REPORTS],
       icon: <i className="ri-file-text-line" style={{fontSize: '24px'}}></i>,
-      onClick: () => navigate('/admin/reports')
+      onClick: () => navigate(ROUTES.PROTECTED.ADMIN.REPORTS)
     },
     {
-      title: 'Profile',
-      paths: ['/admin/profile'],
+      title: t('QUESTION_MODEL.MENU.PROFILE'),
+      paths: [ROUTES.PROTECTED.ADMIN.PROFILE],
       icon: <i className="ri-user-line" style={{fontSize: '24px'}}></i>,
-      onClick: () => navigate('/admin/profile')
+      onClick: () => navigate(ROUTES.PROTECTED.ADMIN.PROFILE)
     },
     {
-      title: 'Logout',
-      paths: ['/logout'],
+      title: t('QUESTION_MODEL.MENU.LOGOUT'),
+      paths: [ROUTES.COMMON.LOGOUT],
       icon: <i className="ri-logout-box-line" style={{fontSize: '24px'}}></i>,
       onClick: () => {
         sessionStorage.removeItem('token');
-        navigate('/login');
+        navigate(ROUTES.COMMON.LOGIN);
       }
     }
   ];
 
   const fetchUserDetails = async () => {
     try {
-      toast.loading('Fetching user details...');
+      toast.loading(t('TOAST_MESSAGES.LOADING'));
       const response = await getUserDetails();
       if (response.success) {
-        console.log(response?.data);
         dispatch(setUser(response?.data));
         if (response?.data?.isAdmin) {
           setMenu(adminMenu);
@@ -97,19 +100,19 @@ function ProtectedRoute() {
       } else {
         toast.dismiss();
         toast.error(response?.message);
-        navigate('/login');
+        navigate(ROUTES.COMMON.LOGIN);
       }
     } catch (error) {
       toast.dismiss();
       toast.error(error.message);
-      navigate('/login');
+      navigate(ROUTES.COMMON.LOGIN);
     }
   };
 
   useEffect(() => {
     const token = sessionStorage.getItem('token');
     if (!token) {
-      navigate('/login');
+      navigate(ROUTES.COMMON.LOGIN);
       return;
     }
 
@@ -123,41 +126,39 @@ function ProtectedRoute() {
     } else {
       setMenu(userMenu);
     }
-  }, [user?.user?.isAdmin]); 
+  }, [user?.user?.isAdmin, t]); 
 
   const getIsActive = (paths) => {
-    console.log(paths);
-    console.log(paths.some(path => activeRoute.includes(path)));
     return paths.some(path => activeRoute.includes(path));
   }
 
   return (
     <div className='layout'>
       <div className='flex gap-2 h-full h-100'>
-          <div className='sidebar'>
-            <div className="menu">
-            {menu.map((item, index) => {
-              return (
-                <div 
-                  className={`menu-item ${getIsActive(item.paths) ? 'active' : ''}`} 
-                  key={index}
-                  onClick={item.onClick}
-                >
-                  {item.icon}
-                  {collapsed && (
-                    <span>{item.title}</span>)}
-                </div>
-              );
-            })}
+        <div className='sidebar'>
+          <div className="menu">
+            {menu.map((item, index) => (
+              <div 
+                className={`menu-item ${getIsActive(item.paths) ? 'active' : ''}`} 
+                key={index}
+                onClick={item.onClick}
+              >
+                {item.icon}
+                {collapsed && <span>{item.title}</span>}
+              </div>
+            ))}
           </div>
         </div>
         
         <div className='body'>
           <div className='header flex justify-between items-center'>
-           {collapsed ? <i className="ri-close-circle-line" style={{fontSize: '24px'}} onClick={() => setCollapsed(!collapsed)}></i> : <i className="ri-menu-2-line" style={{fontSize: '24px'}} onClick={() => setCollapsed(!collapsed)}></i>}
-            <h1 className='text-2xl font-bold'>Quiz App</h1>
+            {collapsed ? 
+              <i className="ri-close-circle-line" style={{fontSize: '24px'}} onClick={() => setCollapsed(!collapsed)}></i> : 
+              <i className="ri-menu-2-line" style={{fontSize: '24px'}} onClick={() => setCollapsed(!collapsed)}></i>
+            }
+            <LanguageSwitcher />
+            <h1 className='text-2xl font-bold'>{t('APP_NAME')}</h1>
             <div className='flex items-center gap-1'>
-              <i className="ri-user-2-fill" style={{fontSize: '24px'}}></i>
               <h1 className='text-lg underline'>{user?.name || user?.user?.name}</h1>
             </div>
           </div>

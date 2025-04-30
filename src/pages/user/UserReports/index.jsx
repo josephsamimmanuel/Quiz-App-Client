@@ -5,6 +5,7 @@ import { Table } from 'antd'
 import { getReportByUserId } from '../../../apiCalls/reports'
 import toast from 'react-hot-toast'
 import moment from 'moment'
+import { USER_REPORTS, TOAST_MESSAGES } from '../../../utils/constants'
 
 function UserReports() {
     const reports = useSelector((state) => state?.reports?.addReport)
@@ -16,7 +17,7 @@ function UserReports() {
 
     const getAllReportsDatabyUserId = async () => {
         try {
-            toast.loading('Loading...')
+            toast.loading(TOAST_MESSAGES.LOADING)
             const response = await getReportByUserId()
             if (response.success) {
                 toast.dismiss()
@@ -34,7 +35,7 @@ function UserReports() {
 
     const columns = [
         {
-            title: 'Exam Name',
+            title: USER_REPORTS.COLUMNS.EXAM_NAME,
             dataIndex: 'examId',
             key: 'examId',
             render: (examId) => {
@@ -46,7 +47,7 @@ function UserReports() {
             }
         },
         {
-            title: 'Category',
+            title: USER_REPORTS.COLUMNS.CATEGORY,
             dataIndex: 'examId',
             key: 'category',
             render: (examId) => {
@@ -58,23 +59,23 @@ function UserReports() {
             }
         },
         {
-            title: 'Date',
+            title: USER_REPORTS.COLUMNS.DATE,
             dataIndex: 'createdAt',
             key: 'createdAt',
             render: (text) => moment(text).format('DD-MM-YYYY')
         },
         {
-            title: 'Total Marks',
+            title: USER_REPORTS.COLUMNS.TOTAL_MARKS,
             dataIndex: 'totalMarks',
             key: 'totalMarks'
         },
         {
-            title: 'Marks Obtained',
+            title: USER_REPORTS.COLUMNS.MARKS_OBTAINED,
             dataIndex: 'marksObtained',
             key: 'marksObtained'
         },
         {
-            title: 'Verdict',
+            title: USER_REPORTS.COLUMNS.VERDICT,
             dataIndex: 'verdict',
             key: 'verdict',
             render: (verdict) => (
@@ -89,7 +90,7 @@ function UserReports() {
 
     return (
         <div>
-            <PageTitle title="Reports" />
+            <PageTitle title={USER_REPORTS.PAGE_TITLE} />
             <hr />
             <Table 
                 columns={columns} 

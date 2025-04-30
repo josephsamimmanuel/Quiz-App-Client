@@ -7,6 +7,7 @@ import toast from 'react-hot-toast'
 import { addReport } from '../../../apiCalls/reports'
 import { setAddReport } from '../../../redux/reports'
 import { useDispatch } from 'react-redux'
+import { USER_WRITE_EXAM } from '../../../utils/constants'
 
 function WriteExam() {
   const exam = useSelector((state) => state.exam.getExamById)
@@ -38,7 +39,7 @@ function WriteExam() {
     const totalMarks = exam?.questions?.length * 2;
     const marksObtained = correctAnswers * 2;
     const passPercentage = marksObtained / totalMarks * 100;
-    const verdict = passPercentage >= 50 ? 'Pass' : 'Fail';
+    const verdict = passPercentage >= 50 ? USER_WRITE_EXAM.VERDICT.PASS : USER_WRITE_EXAM.VERDICT.FAIL;
 
     const tempResult = {
       totalMarks,

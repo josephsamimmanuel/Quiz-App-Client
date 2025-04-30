@@ -99,3 +99,23 @@
   align-items: center;
   justify-content: center;
 }
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 20px 0;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.edit-profile-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}

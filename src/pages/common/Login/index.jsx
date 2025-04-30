@@ -6,18 +6,22 @@ import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../../redux/users';
+import { ROUTES } from '../../../utils/constants';
+import { useTranslation } from 'react-i18next';
 
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { t } = useTranslation();
+
   const onFinish = async (values) => {
     try {
-      toast.loading('Logging in...');
+      toast.loading(t('TOAST_MESSAGES.LOGGING_IN'));
       const response = await loginUser(values);
       if (response.success) {
         sessionStorage.setItem('token', response.data.token);
         dispatch(setUser(response?.data));
-        navigate('/home');
+        navigate(ROUTES.PROTECTED.USER.HOME);
         toast.dismiss();
         toast.success(response.message);
       } else {
@@ -29,24 +33,25 @@ function Login() {
       toast.error(error.response.data.message);
     }
   };
+
   return (
     <div className='flex justify-center items-center h-screen w-screen'>
       <div className='card w-25'>
-        <h1 className='text-xl text-center'>Login</h1>
+        <h1 className='text-xl text-center'>{t('LOGIN.PAGE_TITLE')}</h1>
         <hr className='my-4'/>
         <Form layout='vertical' className='w-full' onFinish={onFinish}>
-          <Form.Item label="Email" name="email" rules={[{ required: true, message: 'Please input your email!' }]}>
-            <Input placeholder='Enter your email' type='email' className='input' />
+          <Form.Item label={t('LOGIN.FORM_LABELS.EMAIL')} name="email" rules={[{ required: true, message: 'Please input your email!' }]}>
+            <Input placeholder={t('LOGIN.FORM_PLACEHOLDERS.EMAIL')} type='email' className='input' />
           </Form.Item>
-          <Form.Item label="Password" name="password" rules={[{ required: true, message: 'Please input your password!' }]}>
-            <Input.Password placeholder='Enter your password' type='password' className='input' />
+          <Form.Item label={t('LOGIN.FORM_LABELS.PASSWORD')} name="password" rules={[{ required: true, message: 'Please input your password!' }]}>
+            <Input.Password placeholder={t('LOGIN.FORM_PLACEHOLDERS.PASSWORD')} type='password' className='input' />
           </Form.Item>
           <Button type="primary" htmlType="submit" className='w-full mb-4'>
-            Login
+            {t('LOGIN.FORM_BUTTONS.LOGIN')}
           </Button>
         </Form>
         <Link to="/register" className='text-center w-full text-decoration-none mt-4'>
-          New User? Register
+          {t('LOGIN.LINK.NEW_USER')}
         </Link>
       </div>
     </div>

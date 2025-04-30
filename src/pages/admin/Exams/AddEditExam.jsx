@@ -9,19 +9,19 @@ import { getAllQuestions } from '../../../apiCalls/exams'
 import { useDispatch } from 'react-redux';
 import { setAllQuestions } from '../../../redux/question';
 import { useSelector } from 'react-redux';
+import { ADD_EDIT_EXAM, TOAST_MESSAGES } from '../../../utils/constants';
+
 function AddEditExam() {
-    const allQuestions = useSelector((state) => state.question.allQuestions);
-    console.log('allQuestions', allQuestions);
+    const allQuestions = useSelector((state) => state.question.allQuestions) || [];
     const dispatch = useDispatch();
     const params = useParams();
     const isEdit = params.id
     const [showModal, setShowModal] = useState(false);
-    console.log('params', params.id);
     const [examData, setExamData] = useState(null);
     const [questionData, setQuestionData] = useState(null);
     const onFinish = async (values) => {
         try {
-            toast.loading(isEdit ? 'Updating Exam...' : 'Adding Exam...');
+            toast.loading(isEdit ? TOAST_MESSAGES.UPDATING_EXAM : TOAST_MESSAGES.ADDING_EXAM);
             const response = isEdit ? await editExam(params.id, values) : await addExam(values);
             if (response.success) {
                 toast.dismiss();
@@ -40,8 +40,7 @@ function AddEditExam() {
         try {
             const response = await getAllExams(params.id);
             if (response.success) {
-                console.log('response', response.data[0]);
-                setExamData(response.data[0]);
+                setExamData(response?.exams);
                 toast.success(response.message);
             } else {
                 toast.error(response.message);
@@ -55,8 +54,8 @@ function AddEditExam() {
         try {
             const response = await getAllQuestions();
             if (response.success) {
-                dispatch(setAllQuestions(response.data));
-                setQuestionData(response.data);
+                dispatch(setAllQuestions(response.questions));
+                setQuestionData(response.questions);
                 toast.success(response.message);
             } else {
                 toast.error(response.message);
@@ -67,11 +66,13 @@ function AddEditExam() {
     }
 
     useEffect(() => {
-        fetchAllQuestions();
+        if ( isEdit ) {
+            fetchAllQuestions();
+        }
     }, []);
 
     useEffect(() => {
-        fetchExamData();
+            fetchExamData();
     }, []);
 
     const handleDeleteQuestion = async (questionId) => {
@@ -88,7 +89,6 @@ function AddEditExam() {
     }
 
     const handleEditQuestion = (question) => {
-        console.log('question', question);
         setQuestionData(question);
         setShowModal(true);
     }
@@ -100,82 +100,82 @@ function AddEditExam() {
 
     return (
         <div>
-            <PageTitle title={isEdit ? 'Edit Exam' : 'Add Exam'} />
+            <PageTitle title={isEdit ? ADD_EDIT_EXAM.PAGE_TITLE_EDIT : ADD_EDIT_EXAM.PAGE_TITLE_ADD} />
             {(examData || !params.id) && (
             <Form layout="vertical" onFinish={onFinish} initialValues={examData}>
                 <Tabs defaultActiveKey="1" >
-                    <Tabs.TabPane tab="Exam Details" key="1">
+                    <Tabs.TabPane tab={ADD_EDIT_EXAM.TABS.EXAM_DETAILS} key="1">
                         <Row gutter={16}>
                             <Col span={8}>
-                                <Form.Item label="Exam Name" name="name">
-                                    <Input className='w-full input-border' type="text" placeholder="Enter Exam Name" />
+                                <Form.Item label={ADD_EDIT_EXAM.FORM_LABELS.EXAM_NAME} name="name">
+                                    <Input className='w-full input-border' type="text" placeholder={ADD_EDIT_EXAM.FORM_PLACEHOLDERS.EXAM_NAME} />
                                 </Form.Item>
                             </Col>
                             <Col span={8}>
-                                <Form.Item label="Exam Duration" name="duration">
-                                    <Input className='w-full input-border' type="number" placeholder="Enter Exam Duration" />
+                                <Form.Item label={ADD_EDIT_EXAM.FORM_LABELS.EXAM_DURATION} name="duration">
+                                    <Input className='w-full input-border' type="number" placeholder={ADD_EDIT_EXAM.FORM_PLACEHOLDERS.EXAM_DURATION} />
                                 </Form.Item>
                             </Col>
                             <Col span={8}>
-                                <Form.Item label="Category" name="category">
-                                    <Select className='w-full input-border border-rounded' placeholder="Select Category" options={[
+                                <Form.Item label={ADD_EDIT_EXAM.FORM_LABELS.EXAM_CATEGORY} name="category">
+                                    <Select className='w-full input-border border-rounded' placeholder={ADD_EDIT_EXAM.FORM_PLACEHOLDERS.EXAM_CATEGORY} options={[
                                         {
-                                            label: 'Javascript',
+                                            label: ADD_EDIT_EXAM.CATEGORY_LABELS.JAVASCRIPT,
                                             value: 'javascript'
                                         },
                                         {
-                                            label: 'React',
+                                            label: ADD_EDIT_EXAM.CATEGORY_LABELS.REACT,
                                             value: 'react'
                                         },
                                         {
-                                            label: 'Node',
+                                            label: ADD_EDIT_EXAM.CATEGORY_LABELS.NODE,
                                             value: 'node'
                                         },
                                         {
-                                            label: 'MongoDB',
+                                            label: ADD_EDIT_EXAM.CATEGORY_LABELS.MONGO,
                                             value: 'mongodb'
                                         },
                                         {
-                                            label: 'Python',
+                                            label: ADD_EDIT_EXAM.CATEGORY_LABELS.PYTHON,
                                             value: 'python'
                                         }
                                     ]} />
                                 </Form.Item>
                             </Col>
                             <Col span={8}>
-                                <Form.Item label="Total Marks" name="totalMarks">
-                                    <Input type="number" placeholder="Enter Total Marks" className='w-full input-border' />
+                                <Form.Item label={ADD_EDIT_EXAM.FORM_LABELS.TOTAL_MARKS} name="totalMarks">
+                                    <Input type="number" placeholder={ADD_EDIT_EXAM.FORM_PLACEHOLDERS.TOTAL_MARKS} className='w-full input-border' />
                                 </Form.Item>
                             </Col>
                             <Col span={8}>
-                                <Form.Item label="Passing Marks" name="passingMarks">
-                                    <Input type="number" placeholder="Enter Passing Marks" className='w-full input-border' />
+                                <Form.Item label={ADD_EDIT_EXAM.FORM_LABELS.PASSING_MARKS} name="passingMarks">
+                                    <Input type="number" placeholder={ADD_EDIT_EXAM.FORM_PLACEHOLDERS.PASSING_MARKS} className='w-full input-border' />
                                 </Form.Item>
                             </Col>
 
                         </Row>
                         <div className='flex justify-end mt-4'>
-                            <Button type='primary' htmlType='submit'>{isEdit ? 'Update Exam' : 'Add Exam'}</Button>
+                            <Button type='primary' htmlType='submit'>{isEdit ? ADD_EDIT_EXAM.FORM_BUTTONS.UPDATE_EXAM : ADD_EDIT_EXAM.FORM_BUTTONS.ADD_EXAM}</Button>
                         </div>
                     </Tabs.TabPane>
                     {params.id && (
-                        <Tabs.TabPane tab="Questions" key="2">
+                        <Tabs.TabPane tab={ADD_EDIT_EXAM.TABS.QUESTIONS} key="2">
                             <div className='flex flex-col'>
                                 <div className='flex justify-between items-center gap-4'>
-                                    <h1>Questions</h1>
-                                    <Button type='primary' onClick={handleAddQuestion}>Add Question</Button>
+                                    <h1>{ADD_EDIT_EXAM.QUESTIONS}</h1>
+                                    <Button type='primary' onClick={handleAddQuestion}>{ADD_EDIT_EXAM.QUESTIONS_TAB.ADD_QUESTION}</Button>
                                 </div>
                                 <div className='allQuestions'>
                                     {allQuestions.map((question, index) => (
                                         <div key={question._id} className='allQuestions'>
-                                            <h3 className='text-lg font-bold'><span className='text-primary underline'>Question {index + 1}:</span> {question.question}</h3>
-                                            <p>Options: {question.options.map((option, index) => <span className='flex flex-col' key={index}>{index + 1}. {option}</span>)}</p>
-                                            <p>Answer: {question.answer}</p>
+                                            <h3 className='text-lg font-bold'><span className='text-primary underline'>{ADD_EDIT_EXAM.QUESTION_MODEL.QUESTION} {index + 1}:</span> {question.question}</h3>
+                                            <p>{ADD_EDIT_EXAM.QUESTION_MODEL.OPTIONS}: {question.options.map((option, index) => <span className='flex flex-col' key={index}>{index + 1}. {option}</span>)}</p>
+                                            <p>{ADD_EDIT_EXAM.QUESTION_MODEL.ANSWER}: {question.answer}</p>
                                             <div className='flex justify-between items-center gap-4'>
-                                            <p>Explanation: {question.explanation}</p>
+                                            <p>{ADD_EDIT_EXAM.QUESTION_MODEL.EXPLANATION}: {question.explanation}</p>
                                             <div className='flex justify-end gap-1'>
-                                                <Button type='primary' onClick={() => handleEditQuestion(question)}>Edit</Button>
-                                                <Button type='primary' onClick={() => handleDeleteQuestion(question._id)}>Delete</Button>
+                                                <Button type='primary' onClick={() => handleEditQuestion(question)}>{ADD_EDIT_EXAM.BUTTONS.EDIT}</Button>
+                                                <Button type='primary' onClick={() => handleDeleteQuestion(question._id)}>{ADD_EDIT_EXAM.BUTTONS.DELETE}</Button>
                                             </div>
                                             </div>
                                         </div>

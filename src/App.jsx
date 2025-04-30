@@ -20,33 +20,40 @@ import AdminReports from "./pages/admin/AdminReports";
 import { Toaster } from "react-hot-toast";
 import { Provider } from "react-redux";
 import store from "./redux/reducer";
+import { ROUTES } from "./utils/constants";
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n';
+
 function App() {
   return (
     <div>
       <Toaster />
       <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-          {/* Common Routes */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          {/* Protected Routes */}
-          {/* User Routes */}
-          <Route path="/" element={<ProtectedRoute />}>
-            <Route path="/home" element={<Home />} />
-            <Route path="/user/write-exam/:id" element={<WriteExam />} />
-            <Route path="/user/reports" element={<UserReports />} />
-          </Route>
-          {/* Admin Routes */}
-          <Route path="/admin" element={<ProtectedRoute />}>
-            <Route path="/admin/exams" element={<Exams />} />
-            <Route path="/admin/exams/add" element={<AddEditExam />} />
-            <Route path="/admin/exams/edit/:id" element={<AddEditExam />} />
-            <Route path="/admin/reports" element={<AdminReports />} />
-            <Route path="/admin/profile" element={<Profile />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+        <I18nextProvider i18n={i18n}>
+          <BrowserRouter>
+            <Routes>
+              {/* Common Routes */}
+              <Route path={ROUTES.COMMON.LOGIN} element={<Login />} />
+              <Route path={ROUTES.COMMON.REGISTER} element={<Register />} />
+              {/* Protected Routes */}
+              {/* User Routes */}
+              <Route path="/" element={<ProtectedRoute />}>
+                <Route path={ROUTES.PROTECTED.USER.HOME} element={<Home />} />
+                <Route path={ROUTES.PROTECTED.USER.WRITE_EXAM} element={<WriteExam />} />
+                <Route path={ROUTES.PROTECTED.USER.REPORTS} element={<UserReports />} />
+                <Route path={ROUTES.PROTECTED.USER.PROFILE} element={<Profile />} />
+              </Route>
+              {/* Admin Routes */}
+              <Route path="/admin" element={<ProtectedRoute />}>
+                <Route path={ROUTES.PROTECTED.ADMIN.EXAMS} element={<Exams />} />
+                <Route path={ROUTES.PROTECTED.ADMIN.ADD_EXAM} element={<AddEditExam />} />
+                <Route path={ROUTES.PROTECTED.ADMIN.EDIT_EXAM} element={<AddEditExam />} />
+                <Route path={ROUTES.PROTECTED.ADMIN.REPORTS} element={<AdminReports />} />
+                <Route path={ROUTES.PROTECTED.ADMIN.PROFILE} element={<Profile />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </I18nextProvider>
       </Provider>
     </div>
   )

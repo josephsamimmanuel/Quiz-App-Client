@@ -1,5 +1,5 @@
 import axiosInstance from "./index";
-import { REGISTER_USER, LOGIN_USER, LOGOUT_USER, GET_USER_DETAILS } from "../utils/constants";
+import { REGISTER_USER, LOGIN_USER, LOGOUT_USER, GET_USER_DETAILS, GET_USER_PROFILE, UPDATE_USER_PROFILE } from "../utils/constants";
 
 export const registerUser = async (userData) => {
     try {
@@ -37,3 +37,20 @@ export const getUserDetails = async () => {
     }
 };
 
+export const getUserProfile = async () => {
+    try {
+        const response = await axiosInstance.get(GET_USER_PROFILE);
+        return response.data;
+    } catch (error) {
+        return error.response.data;
+    }
+};
+
+export const updateUserProfile = async (userData) => {
+    try {
+        const response = await axiosInstance.patch(UPDATE_USER_PROFILE, userData);
+        return response.data;
+    } catch (error) {
+        return error.response.data;
+    }
+};

@@ -7,6 +7,7 @@ import toast from 'react-hot-toast'
 import moment from 'moment'
 import { setGetAllReportsData } from '../../../redux/reports';
 import { useDispatch } from 'react-redux';
+import { ADMIN_REPORTS, TOAST_MESSAGES } from '../../../utils/constants';
 
 function AdminReports() {
     const dispatch = useDispatch()
@@ -23,7 +24,7 @@ function AdminReports() {
 
     const getAllReportsData = async () => {
         try {
-            toast.loading('Loading...')
+            toast.loading(TOAST_MESSAGES.LOADING)
             const response = await getAllReports()
             if (response.success) {
                 toast.dismiss()
@@ -41,7 +42,7 @@ function AdminReports() {
 
     const getAllReportsWithSearchData = async () => {
         try {
-            toast.loading('Loading...')
+            toast.loading(TOAST_MESSAGES.LOADING)
             const response = await getAllReportsWithSearch(search)
             if (response.success) {
                 toast.dismiss()
@@ -59,7 +60,7 @@ function AdminReports() {
 
     const columns = [
         {
-            title: 'Exam Name',
+            title: ADMIN_REPORTS.COLUMNS.EXAM_NAME,
             dataIndex: 'examId',
             key: 'examId',
             render: (examId) => {
@@ -71,7 +72,7 @@ function AdminReports() {
             }
         },
         {
-            title: 'User Name',
+            title: ADMIN_REPORTS.COLUMNS.USER_NAME,
             dataIndex: 'userId',
             key: 'userId',
             render: (userId) => {
@@ -83,7 +84,7 @@ function AdminReports() {
             }
         },
         {
-            title: 'Category',
+            title: ADMIN_REPORTS.COLUMNS.CATEGORY,
             dataIndex: 'examId',
             key: 'category',
             render: (examId) => {
@@ -95,23 +96,23 @@ function AdminReports() {
             }
         },
         {
-            title: 'Date',
+            title: ADMIN_REPORTS.COLUMNS.DATE,
             dataIndex: 'createdAt',
             key: 'createdAt',
             render: (text) => moment(text).format('DD-MM-YYYY')
         },
         {
-            title: 'Total Marks',
+            title: ADMIN_REPORTS.COLUMNS.TOTAL_MARKS,
             dataIndex: 'totalMarks',
             key: 'totalMarks'
         },
         {
-            title: 'Marks Obtained',
+            title: ADMIN_REPORTS.COLUMNS.MARKS_OBTAINED,
             dataIndex: 'marksObtained',
             key: 'marksObtained'
         },
         {
-            title: 'Verdict',
+            title: ADMIN_REPORTS.COLUMNS.VERDICT,
             dataIndex: 'verdict',
             key: 'verdict',
             render: (verdict) => (
@@ -126,12 +127,12 @@ function AdminReports() {
 
     return (
         <div>
-            <PageTitle title="Admin Reports" />
+            <PageTitle title={ADMIN_REPORTS.PAGE_TITLE} />
             <hr />
             <div className='flex gap-2 mt-4 mb-4 w-75'>
-                <input type="text" placeholder='Search by exam' onChange={(e) => setSearch({ ...search, exam: e.target.value })} value={search.exam} />
-                <input type="text" placeholder='Search by user' onChange={(e) => setSearch({ ...search, user: e.target.value })} value={search.user} />
-                <Button type='primary' onClick={getAllReportsWithSearchData}>Search</Button>
+                <input type="text" placeholder={ADMIN_REPORTS.SEARCH_PLACEHOLDER.EXAM} onChange={(e) => setSearch({ ...search, exam: e.target.value })} value={search.exam} />
+                <input type="text" placeholder={ADMIN_REPORTS.SEARCH_PLACEHOLDER.USER} onChange={(e) => setSearch({ ...search, user: e.target.value })} value={search.user} />
+                <Button type='primary' onClick={getAllReportsWithSearchData}>{ADMIN_REPORTS.SEARCH_BUTTON}</Button>
             </div>
             <Table 
                 columns={columns} 
