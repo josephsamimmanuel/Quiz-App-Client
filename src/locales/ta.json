@@ -1,0 +1,269 @@
+{
+    "APP_NAME": "கேள்வி அப்புல்க்கேட்",
+    "QUESTION_MODEL": {
+        "QUESTION": "கேள்வி",
+        "QUESTION_PLACEHOLDER": "கேள்வியை உள்ளிடவும்",
+        "ANSWER": "பதில்",
+        "ANSWER_PLACEHOLDER": "பதிலை உள்ளிடவும்",
+        "EXPLANATION": "விளக்கம்",
+        "EXPLANATION_PLACEHOLDER": "விளக்கத்தை உள்ளிடவும்",
+        "OPTIONS": "விருப்பங்கள்",
+        "FORM_MESSAGE": {
+            "QUESTION": "கேள்வி தேவைப்படுகிறது",
+            "ANSWER": "பதில் தேவைப்படுகிறது",
+            "EXPLANATION": "விளக்கம் தேவைப்படுகிறது"
+        },
+        "MENU": {
+            "HOME": "முதல் பக்கம்",
+            "EXAMS": "கேள்விகள்",
+            "REPORTS": "புத்தகம்",
+            "PROFILE": "பணிமுறை",
+            "LOGOUT": "வெளியேறு"
+        },
+        "OPTIONS_PLACEHOLDER": {
+            "OPTION_1": "விருப்ப 1 உள்ளிடவும்",
+            "OPTION_2": "விருப்ப 2 உள்ளிடவும்",
+            "OPTION_3": "விருப்ப 3 உள்ளிடவும்",
+            "OPTION_4": "விருப்ப 4 உள்ளிடவும்"
+        },
+        "OPTIONS_MESSAGE": {
+            "OPTION_1": "விருப்ப 1 தேவைப்படுகிறது",
+            "OPTION_2": "விருப்ப 2 தேவைப்படுகிறது",
+            "OPTION_3": "விருப்ப 3 தேவைப்படுகிறது",
+            "OPTION_4": "விருப்ப 4 தேவைப்படுகிறது"
+        },
+        "SAVE_BUTTON": "சேமி",
+        "UPDATE_BUTTON": "புதுப்பி",
+        "CANCEL_BUTTON": "ரத்து"
+    },
+    "TOAST_MESSAGES": {
+        "LOADING": "ஏற்கனவே இருக்கிறது",
+        "UPDATING_EXAM": "கேள்வியை புதுப்பிக்கிறது",
+        "ADDING_EXAM": "கேள்வியை சேர்க்கிறது",
+        "UPDATING_QUESTION": "கேள்வியை புதுப்பிக்கிறது",
+        "ADDING_QUESTION": "கேள்வியை சேர்க்கிறது",
+        "LOGGING_IN": "உள்நுழைவு செய்கிறது"
+    },
+    "ADMIN_REPORTS": {
+        "COLUMNS": {
+            "EXAM_NAME": "கேள்வியின் பெயர்",
+            "USER_NAME": "பயனர் பெயர்",
+            "CATEGORY": "வகை",
+            "DATE": "தேதி",
+            "TOTAL_MARKS": "மொத்த மதிப்பு",
+            "MARKS_OBTAINED": "பெற்ற மதிப்பு",
+            "VERDICT": "முடிவு"
+        },
+        "PAGE_TITLE": "அண்ணளிக்கும் புத்தகம்",
+        "SEARCH_PLACEHOLDER": {
+            "EXAM": "கேள்வியை தேடல்",
+            "USER": "பயனரை தேடல்"
+        },
+        "SEARCH_BUTTON": "தேடு"
+    },
+    "ADD_EDIT_EXAM": {
+        "PAGE_TITLE_ADD": "கேள்வியை சேர்க்கவும்",
+        "PAGE_TITLE_EDIT": "கேள்வியை புதுப்பிக்கவும்",
+        "TABS": {
+            "EXAM_DETAILS": "கேள்வியின் விவரங்கள்",
+            "QUESTIONS": "கேள்விகள்"
+        },
+        "FORM_LABELS": {
+            "EXAM_NAME": "கேள்வியின் பெயர்",
+            "EXAM_DURATION": "கேள்வியின் நேரம்",
+            "EXAM_CATEGORY": "கேள்வியின் வகை",
+            "TOTAL_MARKS": "மொத்த மதிப்பு",
+            "PASSING_MARKS": "கட்டுப்பாடு மதிப்பு"
+        },
+        "FORM_PLACEHOLDER": {
+            "EXAM_NAME": "கேள்வியின் பெயரை உள்ளிடவும்",
+            "EXAM_DURATION": "கேள்வியின் நேரத்தை உள்ளிடவும்",
+            "EXAM_CATEGORY": "கேள்வியின் வகையை தேர்ந்தெடுக்கவும்",
+            "TOTAL_MARKS": "மொத்த மதிப்பை உள்ளிடவும்",
+            "PASSING_MARKS": "கட்டுப்பாடு மதிப்பை உள்ளிடவும்"
+        },
+        "CATEGORY_LABELS": {
+            "JAVASCRIPT": "ஜாவாஸ்கிரிப்ட்",
+            "REACT": "ரெக்ட்",
+            "NODE": "நோட்",
+            "MONGO": "மொன்கோ",
+            "PYTHON": "பைதான்"
+        },
+        "FORM_BUTTONS": {
+            "ADD_EXAM": "கேள்வியை சேர்க்கவும்",
+            "UPDATE_EXAM": "கேள்வியை புதுப்பிக்கவும்"
+        },
+        "QUESTIONS_TAB": {
+            "ADD_QUESTION": "கேள்வியை சேர்க்கவும்",
+            "UPDATE_QUESTION": "கேள்வியை புதுப்பிக்கவும்"
+        },
+        "QUESTIONS": "கேள்விகள்",
+        "QUESTION_MODEL": {
+            "QUESTION": "கேள்வி",
+            "OPTIONS": "விருப்பங்கள்",
+            "ANSWER": "பதில்",
+            "EXPLANATION": "விளக்கம்"
+        },
+        "BUTTONS": {
+            "EDIT": "தொகு",
+            "DELETE": "நீக்கு"
+        }
+    },
+    "ADMIN_EXAMS": {
+        "COLUMNS": {
+            "EXAM_NAME": "கேள்வியின் பெயர்",
+            "EXAM_DURATION": "கேள்வியின் நேரம்",
+            "EXAM_CATEGORY": "கேள்வியின் வகை",
+            "PASSING_MARKS": "கட்டுப்பாடு மதிப்பு",
+            "TOTAL_MARKS": "மொத்த மதிப்பு",
+            "ACTIONS": "செயல்பாடுகள்"
+        },
+        "PAGE_TITLE": "கேள்விகள்",
+        "BUTTONS": {
+            "EDIT": "தொகு",
+            "DELETE": "நீக்கு",
+            "ADD_EXAM": "கேள்வியை சேர்க்கவும்"
+        }
+    },
+    "HOME": {
+        "WELCOME_MESSAGE": "வணக்கம்",
+        "EXAM_CARD": {
+            "EXAM_NAME": "கேள்வியின் பெயர்",
+            "EXAM_DURATION": "கேள்வியின் நேரம்",
+            "EXAM_CATEGORY": "கேள்வியின் வகை",
+            "TOTAL_QUESTIONS": "கேள்விகள் மொத்த எண்",
+            "TOTAL_MARKS": "மொத்த மதிப்பு",
+            "PASSING_MARKS": "கட்டுப்பாடு மதிப்பு",
+            "CREATED_AT": "உருவாக்கப்பட்ட தேதி",
+            "UPDATED_AT": "புதுப்பிக்கப்பட்ட தேதி"
+        },
+        "BUTTONS": {
+            "START_EXAM": "கேள்வியை தொடங்கவும்"
+        }
+    },
+    "LOGIN": {
+        "PAGE_TITLE": "உள்நுழைவு",
+        "FORM_LABELS": {
+            "EMAIL": "மின்னஞ்சல்",
+            "PASSWORD": "கடவுச்சொல்"
+        },
+        "FORM_PLACEHOLDER": {
+            "EMAIL": "மின்னஞ்சலை உள்ளிடவும்",
+            "PASSWORD": "கடவுச்சொல்லை உள்ளிடவும்"
+        },
+        "FORM_BUTTONS": {
+            "LOGIN": "உள்நுழைவு"
+        },
+        "LINK": {
+            "NEW_USER": "புதிய பயனர்? பதிவு செய்யவும்"
+        }
+    },
+    "PROFILE": {
+        "PAGE_TITLE": "பணிமுறை",
+        "FORM_LABELS": {
+            "NAME": "பெயர்",
+            "EMAIL": "மின்னஞ்சல்"
+        },
+        "FORM_PLACEHOLDER": {
+            "NAME": "பெயரை உள்ளிடவும்",
+            "EMAIL": "மின்னஞ்சலை உள்ளிடவும்"
+        },
+        "FORM_BUTTONS": {
+            "EDIT_NAME": "பெயரை தொகுக்கவும்",
+            "EDIT_EMAIL": "மின்னஞ்சலை தொகுக்கவும்"
+        },
+        "BUTTONS": {
+            "SAVE": "சேமி"
+        }
+    },
+    "REGISTER": {
+        "PAGE_TITLE": "பதிவு",
+        "FORM_LABELS": {
+            "NAME": "பெயர்",
+            "EMAIL": "மின்னஞ்சல்",
+            "PASSWORD": "கடவுச்சொல்"
+        },
+        "FORM_PLACEHOLDER": {
+            "NAME": "பெயரை உள்ளிடவும்",
+            "EMAIL": "மின்னஞ்சலை உள்ளிடவும்",
+            "PASSWORD": "கடவுச்சொல்லை உள்ளிடவும்"
+        },
+        "FORM_BUTTONS": {
+            "REGISTER": "பதிவு"
+        },
+        "LINK": {
+            "ALREADY_USER": "பயனர் இருக்கிறார்களா? உள்நுழைவு செய்யவும்"
+        }
+    },
+    "USER_REPORTS": {
+        "PAGE_TITLE": "புத்தகம்",
+        "COLUMNS": {
+            "EXAM_NAME": "கேள்வியின் பெயர்",
+            "USER_NAME": "பயனர் பெயர்",
+            "CATEGORY": "வகை",
+            "DATE": "தேதி",
+            "TOTAL_MARKS": "மொத்த மதிப்பு",
+            "MARKS_OBTAINED": "பெற்ற மதிப்பு",
+            "VERDICT": "முடிவு"
+        }
+    },
+    "USER_WRITE_EXAM": {
+        "VERDICT": {
+            "PASS": "வெற்றி",
+            "FAIL": "தோல்வி"
+        }
+    },
+    "USER_WRITE_EXAM_INSTRUCTION": {
+        "PAGE_TITLE": "குறிப்புகள்",
+        "INSTRUCTIONS": {
+            "READ_INSTRUCTIONS": "வழிமுறைகளை கவனமாக படிக்கவும்",
+            "MAKE_SURE_UNDERSTAND": "தேர்வை தொடங்கும் முன் வழிமுறைகளை புரிந்துகொண்டீர்கள் என்பதை உறுதிசெய்யவும்.",
+            "EXAM_WILL_BE_CONDUCTED": "தேர்வு, கேள்விகளின் அடிப்படையில் நடத்தப்படும்.",
+            "EXAM_MUST_BE_COMPLETED": "தேர்வை {exam.duration} நிமிடங்களில் முடிக்க வேண்டும்.",
+            "EXAM_WILL_BE_SUBMITTED_AUTOMATICALLY": "தேர்வு {exam.duration} நிமிடங்களுக்கு பிறகு தானாக சமர்ப்பிக்கப்படும்.",
+            "YOU_CANNOT_SUBMIT_THE_EXAM_ONCE_IT_IS_STARTED": "தேர்வு தொடங்கிய பிறகு அதை நீங்கள் சமர்ப்பிக்க முடியாது.",
+            "DO_NOT_REFRESH_THE_PAGE": "பக்கத்தை புதுப்பிக்க வேண்டாம்.",
+            "DO_NOT_CLOSE_THE_TAB": "தாவலை மூட வேண்டாம்.",
+            "DO_NOT_USE_ANY_EXTERNAL_RESOURCES": "வெளி ஆதாரங்களை பயன்படுத்த வேண்டாம்.",
+            "YOU_CAN_USE_THE_PREVIOUS_AND_NEXT_BUTTON_TO_NAVIGATE_THROUGH_THE_QUESTIONS": "கேள்விகளுக்கிடையில் செல்ல பிந்தைய மற்றும் அடுத்த பொத்தான்களை பயன்படுத்தலாம்.",
+            "YOU_CANNOT_GO_BACK_TO_THE_PREVIOUS_QUESTION_ONCE_YOU_HAVE_SUBMITTED_THE_EXAM": "தேர்வை சமர்ப்பித்த பிறகு முந்தைய கேள்விக்கு திரும்ப முடியாது.",
+            "TOTAL_NUMBER_OF_QUESTIONS_ARE": "மொத்த கேள்விகள் எண்ணிக்கை {exam?.questions?.length}.",
+            "EACH_QUESTION_CARRY_2_MARKS": "ஒவ்வொரு கேள்விக்கும் 2 மதிப்பெண்கள் உள்ளன.",
+            "TOTAL_MARKS_ARE": "மொத்த மதிப்பெண்கள் {exam?.questions?.length * 2}."
+        },
+        "DECLARATION": "மேலே உள்ள குறிப்புகளை மற்றும் தேர்வை தொடங்க விரும்புகிறேன்.",
+        "BUTTONS": {
+            "START_EXAM": "தேர்வை தொடங்கவும்"
+        }
+    },
+    "QUESTION": {
+        "BUTTONS": {
+            "PREVIOUS": "முந்தைய",
+            "NEXT": "அடுத்த",
+            "SUBMIT": "சமர்ப்பிக்கவும்"
+        },
+        "PROGRESS": "கேள்வி {selectedQuestion + 1} இல் {exam?.questions?.length}"
+    },
+    "USER_WRITE_EXAM_RESULT": {
+        "VERDICT": {
+            "PASS": "வெற்றி",
+            "FAIL": "தோல்வி",
+            "SUCCESS": "வெற்றி",
+            "EXCEPTION": "முடிவு"
+        },
+        "VERDICT_MESSAGE": {
+            "PASS": "வெற்றி! 🎉",
+            "FAIL": "புதுப்பிக்கவும் 😊"
+        },
+        "RESULT": {
+            "TOTAL_MARKS": "மொத்த மதிப்பெண்கள்",
+            "PASS_PERCENTAGE": "கட்டுப்பாடு மதிப்பு 50%",
+            "MARKS_OBTAINED": "பெற்ற மதிப்பெண்கள்",
+            "WRONG_ANSWERS": "தோல்வி பதில்கள்",
+            "UNATTEMPTED": "பதில்வியானவை"
+        },
+        "BUTTONS": {
+            "TRY_AGAIN": "மீண்டும் முயற்சிக்கவும்"
+        }
+    }
+}

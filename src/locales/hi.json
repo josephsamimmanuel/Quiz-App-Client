@@ -1,0 +1,269 @@
+{
+    "APP_NAME": "क्विज ऐप",
+    "QUESTION_MODEL": {
+        "QUESTION": "प्रश्न",
+        "QUESTION_PLACEHOLDER": "प्रश्न दर्ज करें",
+        "ANSWER": "उत्तर",
+        "ANSWER_PLACEHOLDER": "उत्तर दर्ज करें",
+        "EXPLANATION": "व्याख्या",
+        "EXPLANATION_PLACEHOLDER": "व्याख्या दर्ज करें",
+        "OPTIONS": "विकल्प",
+        "FORM_MESSAGE": {
+            "QUESTION": "प्रश्न आवश्यक है",
+            "ANSWER": "उत्तर आवश्यक है",
+            "EXPLANATION": "व्याख्या आवश्यक है"
+        },
+        "MENU": {
+            "HOME": "होम",
+            "EXAMS": "परीक्षाएं",
+            "REPORTS": "रिपोर्ट्स",
+            "PROFILE": "प्रोफाइल",
+            "LOGOUT": "लॉग आउट"
+        },
+        "OPTIONS_PLACEHOLDER": {
+            "OPTION_1": "विकल्प 1 दर्ज करें",
+            "OPTION_2": "विकल्प 2 दर्ज करें",
+            "OPTION_3": "विकल्प 3 दर्ज करें",
+            "OPTION_4": "विकल्प 4 दर्ज करें"
+        },
+        "OPTIONS_MESSAGE": {
+            "OPTION_1": "विकल्प 1 आवश्यक है",
+            "OPTION_2": "विकल्प 2 आवश्यक है",
+            "OPTION_3": "विकल्प 3 आवश्यक है",
+            "OPTION_4": "विकल्प 4 आवश्यक है"
+        },
+        "SAVE_BUTTON": "सहेजें",
+        "UPDATE_BUTTON": "अपडेट करें",
+        "CANCEL_BUTTON": "रद्द करें"
+    },
+    "TOAST_MESSAGES": {
+        "LOADING": "लोड हो रहा है...",
+        "UPDATING_EXAM": "परीक्षा अपडेट की जा रही है...",
+        "ADDING_EXAM": "परीक्षा जोड़ी जा रही है...",
+        "UPDATING_QUESTION": "प्रश्न अपडेट किया जा रहा है...",
+        "ADDING_QUESTION": "प्रश्न जोड़ा जा रहा है...",
+        "LOGGING_IN": "लॉग इन हो रहा है..."
+    },
+    "ADMIN_REPORTS": {
+        "COLUMNS": {
+            "EXAM_NAME": "परीक्षा का नाम",
+            "USER_NAME": "उपयोगकर्ता का नाम",
+            "CATEGORY": "श्रेणी",
+            "DATE": "तारीख",
+            "TOTAL_MARKS": "कुल अंक",
+            "MARKS_OBTAINED": "प्राप्त अंक",
+            "VERDICT": "निर्णय"
+        },
+        "PAGE_TITLE": "एडमिन रिपोर्ट्स",
+        "SEARCH_PLACEHOLDER": {
+            "EXAM": "परीक्षा से खोजें",
+            "USER": "उपयोगकर्ता से खोजें"
+        },
+        "SEARCH_BUTTON": "खोजें"
+    },
+    "ADD_EDIT_EXAM": {
+        "PAGE_TITLE_ADD": "परीक्षा जोड़ें",
+        "PAGE_TITLE_EDIT": "परीक्षा संपादित करें",
+        "TABS": {
+            "EXAM_DETAILS": "परीक्षा विवरण",
+            "QUESTIONS": "प्रश्न"
+        },
+        "FORM_LABELS": {
+            "EXAM_NAME": "परीक्षा का नाम",
+            "EXAM_DURATION": "परीक्षा अवधि",
+            "EXAM_CATEGORY": "श्रेणी",
+            "TOTAL_MARKS": "कुल अंक",
+            "PASSING_MARKS": "उत्तीर्ण अंक"
+        },
+        "FORM_PLACEHOLDERS": {
+            "EXAM_NAME": "परीक्षा का नाम दर्ज करें",
+            "EXAM_DURATION": "परीक्षा अवधि दर्ज करें",
+            "EXAM_CATEGORY": "श्रेणी चुनें",
+            "TOTAL_MARKS": "कुल अंक दर्ज करें",
+            "PASSING_MARKS": "उत्तीर्ण अंक दर्ज करें"
+        },
+        "CATEGORY_LABELS": {
+            "JAVASCRIPT": "जावास्क्रिप्ट",
+            "REACT": "रिएक्ट",
+            "NODE": "नोड",
+            "MONGO": "मोंगोडीबी",
+            "PYTHON": "पायथन"
+        },
+        "FORM_BUTTONS": {
+            "ADD_EXAM": "परीक्षा जोड़ें",
+            "UPDATE_EXAM": "परीक्षा अपडेट करें"
+        },
+        "QUESTIONS_TAB": {
+            "ADD_QUESTION": "प्रश्न जोड़ें",
+            "UPDATE_QUESTION": "प्रश्न अपडेट करें"
+        },
+        "QUESTIONS": "प्रश्न",
+        "QUESTION_MODEL": {
+            "QUESTION": "प्रश्न",
+            "OPTIONS": "विकल्प",
+            "ANSWER": "उत्तर",
+            "EXPLANATION": "व्याख्या"
+        },
+        "BUTTONS": {
+            "EDIT": "संपादित करें",
+            "DELETE": "हटाएं"
+        }
+    },
+    "ADMIN_EXAMS": {
+        "COLUMNS": {
+            "EXAM_NAME": "परीक्षा का नाम",
+            "EXAM_DURATION": "परीक्षा अवधि",
+            "EXAM_CATEGORY": "श्रेणी",
+            "PASSING_MARKS": "उत्तीर्ण अंक",
+            "TOTAL_MARKS": "कुल अंक",
+            "ACTIONS": "कार्रवाइयां"
+        },
+        "PAGE_TITLE": "परीक्षाएं",
+        "BUTTONS": {
+            "EDIT": "संपादित करें",
+            "DELETE": "हटाएं",
+            "ADD_EXAM": "परीक्षा जोड़ें"
+        }
+    },
+    "HOME": {
+        "WELCOME_MESSAGE": "स्वागत है",
+        "EXAM_CARD": {
+            "EXAM_NAME": "परीक्षा का नाम",
+            "EXAM_DURATION": "परीक्षा अवधि",
+            "EXAM_CATEGORY": "श्रेणी",
+            "TOTAL_QUESTIONS": "कुल प्रश्न",
+            "TOTAL_MARKS": "कुल अंक",
+            "PASSING_MARKS": "उत्तीर्ण अंक",
+            "CREATED_AT": "बनाया गया",
+            "UPDATED_AT": "अपडेट किया गया"
+        },
+        "BUTTONS": {
+            "START_EXAM": "परीक्षा शुरू करें"
+        }
+    },
+    "LOGIN": {
+        "PAGE_TITLE": "लॉग इन",
+        "FORM_LABELS": {
+            "EMAIL": "ईमेल",
+            "PASSWORD": "पासवर्ड"
+        },
+        "FORM_PLACEHOLDERS": {
+            "EMAIL": "अपना ईमेल दर्ज करें",
+            "PASSWORD": "अपना पासवर्ड दर्ज करें"
+        },
+        "FORM_BUTTONS": {
+            "LOGIN": "लॉग इन"
+        },
+        "LINK": {
+            "NEW_USER": "नया उपयोगकर्ता? रजिस्टर करें"
+        }
+    },
+    "PROFILE": {
+        "PAGE_TITLE": "प्रोफाइल",
+        "FORM_LABELS": {
+            "NAME": "नाम",
+            "EMAIL": "ईमेल"
+        },
+        "FORM_PLACEHOLDERS": {
+            "NAME": "अपना नाम दर्ज करें",
+            "EMAIL": "अपना ईमेल दर्ज करें"
+        },
+        "FORM_BUTTONS": {
+            "EDIT_NAME": "नाम संपादित करें",
+            "EDIT_EMAIL": "ईमेल संपादित करें"
+        },
+        "BUTTONS": {
+            "SAVE": "सहेजें"
+        }
+    },
+    "REGISTER": {
+        "PAGE_TITLE": "रजिस्टर",
+        "FORM_LABELS": {
+            "NAME": "नाम",
+            "EMAIL": "ईमेल",
+            "PASSWORD": "पासवर्ड"
+        },
+        "FORM_PLACEHOLDERS": {
+            "NAME": "अपना नाम दर्ज करें",
+            "EMAIL": "अपना ईमेल दर्ज करें",
+            "PASSWORD": "अपना पासवर्ड दर्ज करें"
+        },
+        "FORM_BUTTONS": {
+            "REGISTER": "रजिस्टर"
+        },
+        "LINK": {
+            "ALREADY_HAVE_ACCOUNT": "पहले से खाता है? लॉग इन करें"
+        }
+    },
+    "USER_REPORTS": {
+        "PAGE_TITLE": "रिपोर्ट्स",
+        "COLUMNS": {
+            "EXAM_NAME": "परीक्षा का नाम",
+            "USER_NAME": "उपयोगकर्ता का नाम",
+            "CATEGORY": "श्रेणी",
+            "DATE": "तारीख",
+            "TOTAL_MARKS": "कुल अंक",
+            "MARKS_OBTAINED": "प्राप्त अंक",
+            "VERDICT": "निर्णय"
+        }
+    },
+    "USER_WRITE_EXAM": {
+        "VERDICT": {
+            "PASS": "उत्तीर्ण",
+            "FAIL": "अनुत्तीर्ण"
+        }
+    },
+    "USER_WRITE_EXAM_INSTRUCTION": {
+        "PAGE_TITLE": "निर्देश",
+        "INSTRUCTIONS": {
+            "READ_INSTRUCTIONS": "निर्देशों को ध्यान से पढ़ें",
+            "MAKE_SURE_UNDERSTAND": "परीक्षा शुरू करने से पहले सुनिश्चित करें कि आप निर्देशों को समझ गए हैं।",
+            "EXAM_WILL_BE_CONDUCTED": "परीक्षा परीक्षा में दिए गए प्रश्नों के आधार पर आयोजित की जाएगी।",
+            "EXAM_MUST_BE_COMPLETED": "परीक्षा {exam.duration} मिनट में पूरी करनी होगी।",
+            "EXAM_WILL_BE_SUBMITTED_AUTOMATICALLY": "परीक्षा {exam.duration} मिनट के बाद स्वचालित रूप से जमा कर दी जाएगी।",
+            "YOU_CANNOT_SUBMIT_THE_EXAM_ONCE_IT_IS_STARTED": "परीक्षा शुरू होने के बाद आप इसे जमा नहीं कर सकते।",
+            "DO_NOT_REFRESH_THE_PAGE": "पृष्ठ को रीफ्रेश न करें।",
+            "DO_NOT_CLOSE_THE_TAB": "टैब को बंद न करें।",
+            "DO_NOT_USE_ANY_EXTERNAL_RESOURCES": "किसी भी बाहरी संसाधन का उपयोग न करें।",
+            "YOU_CAN_USE_THE_PREVIOUS_AND_NEXT_BUTTON_TO_NAVIGATE_THROUGH_THE_QUESTIONS": "आप प्रश्नों के माध्यम से नेविगेट करने के लिए पिछले और अगले बटन का उपयोग कर सकते हैं।",
+            "YOU_CANNOT_GO_BACK_TO_THE_PREVIOUS_QUESTION_ONCE_YOU_HAVE_SUBMITTED_THE_EXAM": "परीक्षा जमा करने के बाद आप पिछले प्रश्न पर वापस नहीं जा सकते।",
+            "TOTAL_NUMBER_OF_QUESTIONS_ARE": "कुल प्रश्नों की संख्या {exam?.questions?.length} है।",
+            "EACH_QUESTION_CARRY_2_MARKS": "प्रत्येक प्रश्न 2 अंक का है।",
+            "TOTAL_MARKS_ARE": "कुल अंक {exam?.questions?.length * 2} हैं।"
+        },
+        "DECLARATION": "मैं उपरोक्त निर्देशों से सहमत हूं और परीक्षा शुरू करना चाहता हूं।",
+        "BUTTONS": {
+            "START_EXAM": "परीक्षा शुरू करें"
+        }
+    },
+    "QUESTION": {
+        "BUTTONS": {
+            "PREVIOUS": "पिछला",
+            "NEXT": "अगला",
+            "SUBMIT": "जमा करें"
+        },
+        "PROGRESS": "प्रश्न {selectedQuestion + 1} में से {exam?.questions?.length}"
+    },
+    "USER_WRITE_EXAM_RESULT": {
+        "VERDICT": {
+            "PASS": "उत्तीर्ण",
+            "FAIL": "अनुत्तीर्ण",
+            "SUCCESS": "सफल",
+            "EXCEPTION": "अपवाद"
+        },
+        "VERDICT_MESSAGE": {
+            "PASS": "बधाई हो! 🎉",
+            "FAIL": "अगली बार बेहतर करें! 😊"
+        },
+        "RESULT": {
+            "TOTAL_MARKS": "कुल अंक",
+            "PASS_PERCENTAGE": "उत्तीर्ण प्रतिशत 50%",
+            "MARKS_OBTAINED": "प्राप्त अंक",
+            "WRONG_ANSWERS": "गलत उत्तर",
+            "UNATTEMPTED": "अनुत्तरित"
+        },
+        "BUTTONS": {
+            "TRY_AGAIN": "पुनः प्रयास करें"
+        }
+    }
+}
