@@ -4,8 +4,10 @@ import { getUserProfile, updateUserProfile } from '../../../apiCalls/users';
 import { Button, Input } from 'antd';
 import toast from 'react-hot-toast';
 import { PROFILE, TOAST_MESSAGES } from '../../../utils/constants';
+import { useTranslation } from 'react-i18next';
 
 function Profile() {
+  const { t } = useTranslation();
   const [profile, setProfile] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [name, setName] = useState('');
@@ -48,22 +50,22 @@ function Profile() {
 
   return (
     <div>
-      <PageTitle title={PROFILE.PAGE_TITLE} />
+      <PageTitle title={t('PROFILE.PAGE_TITLE')} />
       <div className='profile-container'>
-          <h1>{PROFILE.FORM_LABELS.NAME}: {profile?.name}</h1>
-          <Button onClick={() => {setIsEditing(true); setInputType('name')}}>{PROFILE.FORM_BUTTONS.EDIT_NAME}</Button>
-          <p>{PROFILE.FORM_LABELS.EMAIL}: {profile?.email}</p>
-          <Button onClick={() => {setIsEditing(true); setInputType('email')}}>Edit Email</Button>
+          <h1>{t('PROFILE.FORM_LABELS.NAME')}: {profile?.name}</h1>
+          <Button onClick={() => {setIsEditing(true); setInputType('name')}}>{t('PROFILE.FORM_BUTTONS.EDIT_NAME')}</Button>
+          <p>{t('PROFILE.FORM_LABELS.EMAIL')}: {profile?.email}</p>
+          <Button onClick={() => {setIsEditing(true); setInputType('email')}}>{t('PROFILE.FORM_BUTTONS.EDIT_EMAIL')}</Button>
       </div>
       {isEditing && (
         <div className='edit-profile-container'>
           {inputType === 'name' && (
-            <Input placeholder={PROFILE.FORM_PLACEHOLDERS.NAME} onChange={(e) => setName(e.target.value)} />
+            <Input placeholder={t('PROFILE.FORM_PLACEHOLDERS.NAME')} onChange={(e) => setName(e.target.value)} />
           )}
           {inputType === 'email' && (
-            <Input placeholder={PROFILE.FORM_PLACEHOLDERS.EMAIL} onChange={(e) => setEmail(e.target.value)} />
+            <Input placeholder={t('PROFILE.FORM_PLACEHOLDERS.EMAIL')} onChange={(e) => setEmail(e.target.value)} />
           )}
-          <Button onClick={handleSave}>{PROFILE.FORM_BUTTONS.SAVE}</Button>
+          <Button onClick={handleSave}>{t('PROFILE.FORM_BUTTONS.SAVE')}</Button>
         </div>
       )}
     </div>

@@ -5,9 +5,11 @@ import { Table } from 'antd'
 import { getReportByUserId } from '../../../apiCalls/reports'
 import toast from 'react-hot-toast'
 import moment from 'moment'
-import { USER_REPORTS, TOAST_MESSAGES } from '../../../utils/constants'
+import { TOAST_MESSAGES } from '../../../utils/constants'
+import { useTranslation } from 'react-i18next'
 
 function UserReports() {
+    const { t } = useTranslation();
     const reports = useSelector((state) => state?.reports?.addReport)
     const [reportsData, setReportsData] = useState([])
 
@@ -17,7 +19,7 @@ function UserReports() {
 
     const getAllReportsDatabyUserId = async () => {
         try {
-            toast.loading(TOAST_MESSAGES.LOADING)
+            toast.loading(t('TOAST_MESSAGES.LOADING'))
             const response = await getReportByUserId()
             if (response.success) {
                 toast.dismiss()
@@ -35,7 +37,7 @@ function UserReports() {
 
     const columns = [
         {
-            title: USER_REPORTS.COLUMNS.EXAM_NAME,
+            title: t('USER_REPORTS.COLUMNS.EXAM_NAME'),
             dataIndex: 'examId',
             key: 'examId',
             render: (examId) => {
@@ -47,7 +49,7 @@ function UserReports() {
             }
         },
         {
-            title: USER_REPORTS.COLUMNS.CATEGORY,
+            title: t('USER_REPORTS.COLUMNS.CATEGORY'),
             dataIndex: 'examId',
             key: 'category',
             render: (examId) => {
@@ -59,23 +61,23 @@ function UserReports() {
             }
         },
         {
-            title: USER_REPORTS.COLUMNS.DATE,
+            title: t('USER_REPORTS.COLUMNS.DATE'),
             dataIndex: 'createdAt',
             key: 'createdAt',
             render: (text) => moment(text).format('DD-MM-YYYY')
         },
         {
-            title: USER_REPORTS.COLUMNS.TOTAL_MARKS,
+            title: t('USER_REPORTS.COLUMNS.TOTAL_MARKS'),
             dataIndex: 'totalMarks',
             key: 'totalMarks'
         },
         {
-            title: USER_REPORTS.COLUMNS.MARKS_OBTAINED,
+            title: t('USER_REPORTS.COLUMNS.MARKS_OBTAINED'),
             dataIndex: 'marksObtained',
             key: 'marksObtained'
         },
         {
-            title: USER_REPORTS.COLUMNS.VERDICT,
+            title: t('USER_REPORTS.COLUMNS.VERDICT'),
             dataIndex: 'verdict',
             key: 'verdict',
             render: (verdict) => (
@@ -90,7 +92,7 @@ function UserReports() {
 
     return (
         <div>
-            <PageTitle title={USER_REPORTS.PAGE_TITLE} />
+            <PageTitle title={t('USER_REPORTS.PAGE_TITLE')} />
             <hr />
             <Table 
                 columns={columns} 

@@ -295,7 +295,7 @@ export const USER_WRITE_EXAM_RESULT = {
     },
     RESULT: {
         TOTAL_MARKS: "Total Marks",
-        PASS_PERCENTAGE: "Pass Percentage 50%",
+        PASS_PERCENTAGE: "Pass Percentage",
         MARKS_OBTAINED: "Marks Obtained",
         WRONG_ANSWERS: "Wrong Answers",
         UNATTEMPTED: "Unattempted",

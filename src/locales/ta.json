@@ -257,7 +257,7 @@
         },
         "RESULT": {
             "TOTAL_MARKS": "மொத்த மதிப்பெண்கள்",
-            "PASS_PERCENTAGE": "கட்டுப்பாடு மதிப்பு 50%",
+            "PASS_PERCENTAGE": "கட்டுப்பாடு மதிப்பு",
             "MARKS_OBTAINED": "பெற்ற மதிப்பெண்கள்",
             "WRONG_ANSWERS": "தோல்வி பதில்கள்",
             "UNATTEMPTED": "பதில்வியானவை"

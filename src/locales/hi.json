@@ -257,7 +257,7 @@
         },
         "RESULT": {
             "TOTAL_MARKS": "कुल अंक",
-            "PASS_PERCENTAGE": "उत्तीर्ण प्रतिशत 50%",
+            "PASS_PERCENTAGE": "उत्तीर्ण प्रतिशत",
             "MARKS_OBTAINED": "प्राप्त अंक",
             "WRONG_ANSWERS": "गलत उत्तर",
             "UNATTEMPTED": "अनुत्तरित"

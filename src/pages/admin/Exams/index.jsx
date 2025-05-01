@@ -4,39 +4,41 @@ import { Button, Table } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { deleteExam, getAllExams } from '../../../apiCalls/exams';
 import toast from 'react-hot-toast';
-import { ADMIN_EXAMS, ROUTES } from '../../../utils/constants';
+import { ROUTES } from '../../../utils/constants';
+import { useTranslation } from 'react-i18next';
 
 function Exams() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [exams, setExams] = useState([]);
   const columns = [
     {
-      title: ADMIN_EXAMS.COLUMNS.EXAM_NAME,
+      title: t('ADMIN_EXAMS.COLUMNS.EXAM_NAME'),
       dataIndex: 'name',
     },
     {
-      title: ADMIN_EXAMS.COLUMNS.EXAM_CATEGORY,
+      title: t('ADMIN_EXAMS.COLUMNS.EXAM_CATEGORY'),
       dataIndex: 'category',
     },
     {
-      title: ADMIN_EXAMS.COLUMNS.EXAM_DURATION,
+      title: t('ADMIN_EXAMS.COLUMNS.EXAM_DURATION'),
       dataIndex: 'duration',
     },
     {
-      title: ADMIN_EXAMS.COLUMNS.PASSING_MARKS,
+      title: t('ADMIN_EXAMS.COLUMNS.PASSING_MARKS'),
       dataIndex: 'passingMarks',
     },
     {
-      title: ADMIN_EXAMS.COLUMNS.TOTAL_MARKS,
+      title: t('ADMIN_EXAMS.COLUMNS.TOTAL_MARKS'),
       dataIndex: 'totalMarks',
     },
     {
-      title: ADMIN_EXAMS.COLUMNS.ACTIONS,
+      title: t('ADMIN_EXAMS.COLUMNS.ACTIONS'),
       dataIndex: 'actions',
       render: (_, record) => (
         <div className='flex gap-2'>
-          <Button type='primary' onClick={() => navigate(ROUTES.PROTECTED.ADMIN.EDIT_EXAM.replace(':id', record._id))}>{ADMIN_EXAMS.BUTTONS.EDIT}</Button>
-          <Button type='danger' onClick={() => handleDelete(record._id)}>{ADMIN_EXAMS.BUTTONS.DELETE}</Button>
+          <Button type='primary' onClick={() => navigate(ROUTES.PROTECTED.ADMIN.EDIT_EXAM.replace(':id', record._id))}>{t('ADMIN_EXAMS.BUTTONS.EDIT')}</Button>
+          <Button type='danger' onClick={() => handleDelete(record._id)}>{t('ADMIN_EXAMS.BUTTONS.DELETE')}</Button>
         </div>
       ),
     },
@@ -72,8 +74,8 @@ function Exams() {
   return (
     <div>
       <div className='flex justify-between items-center mt-2 mb-4'>
-        <PageTitle title={ADMIN_EXAMS.PAGE_TITLE} />
-        <Button className='bg-blue-500 text-white px-4 py-2 rounded-md' onClick={() => navigate(ROUTES.PROTECTED.ADMIN.ADD_EXAM)}>{ADMIN_EXAMS.BUTTONS.ADD_EXAM}</Button>
+        <PageTitle title={t('ADMIN_EXAMS.PAGE_TITLE')} />
+        <Button className='bg-blue-500 text-white px-4 py-2 rounded-md' onClick={() => navigate(ROUTES.PROTECTED.ADMIN.ADD_EXAM)}>{t('ADMIN_EXAMS.BUTTONS.ADD_EXAM')}</Button>
       </div>
 
       <Table columns={columns} dataSource={exams} />

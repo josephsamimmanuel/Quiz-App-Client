@@ -1,9 +1,9 @@
 import { Button, Radio } from 'antd'
 import React from 'react'
-import { QUESTION } from '../../../utils/constants'
+import { useTranslation } from 'react-i18next'
 
 function Question({ exam, setView, selectedQuestion, setSelectedQuestion, selectedAnswers, setSelectedAnswers, calculateResult }) {
-
+    const { t } = useTranslation();
     // Get current question
     const currentQuestion = exam?.questions?.[selectedQuestion];
 
@@ -62,7 +62,7 @@ function Question({ exam, setView, selectedQuestion, setSelectedQuestion, select
                         onClick={handlePrevious}
                         disabled={selectedQuestion === 0}
                     >
-                        {QUESTION.BUTTONS.PREVIOUS}
+                        {t('QUESTION.BUTTONS.PREVIOUS')}
                     </Button>
                     {selectedQuestion !== exam.questions.length - 1 && (
                         <Button
@@ -70,7 +70,7 @@ function Question({ exam, setView, selectedQuestion, setSelectedQuestion, select
                             onClick={handleNext}
                             disabled={selectedQuestion === exam.questions.length - 1}
                         >
-                            {QUESTION.BUTTONS.NEXT}
+                            {t('QUESTION.BUTTONS.NEXT')}
                         </Button>
                     )}
                     {selectedQuestion === exam.questions.length - 1 && (
@@ -83,7 +83,7 @@ function Question({ exam, setView, selectedQuestion, setSelectedQuestion, select
                                 setView('result')
                             }}
                         >
-                            {QUESTION.BUTTONS.SUBMIT}
+                            {t('QUESTION.BUTTONS.SUBMIT')}
                         </Button>
                     )}
                 </div>
@@ -91,7 +91,7 @@ function Question({ exam, setView, selectedQuestion, setSelectedQuestion, select
 
             {/* Question Progress */}
             <div className="mt-4">
-                {QUESTION.PROGRESS.replace('{selectedQuestion + 1}', selectedQuestion + 1).replace('{exam?.questions?.length}', exam?.questions?.length)}
+                {t('QUESTION.PROGRESS').replace('{selectedQuestion + 1}', selectedQuestion + 1).replace('{exam?.questions?.length}', exam?.questions?.length)}
             </div>
         </div>
     )

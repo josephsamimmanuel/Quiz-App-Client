@@ -9,11 +9,12 @@ import { getAllQuestions } from '../../../apiCalls/exams'
 import { useDispatch } from 'react-redux';
 import { setAllQuestions } from '../../../redux/question';
 import { useSelector } from 'react-redux';
-import { ADD_EDIT_EXAM, TOAST_MESSAGES } from '../../../utils/constants';
+import { useTranslation } from 'react-i18next';
 
 function AddEditExam() {
     const allQuestions = useSelector((state) => state.question.allQuestions) || [];
     const dispatch = useDispatch();
+    const { t } = useTranslation();
     const params = useParams();
     const isEdit = params.id
     const [showModal, setShowModal] = useState(false);
@@ -21,7 +22,7 @@ function AddEditExam() {
     const [questionData, setQuestionData] = useState(null);
     const onFinish = async (values) => {
         try {
-            toast.loading(isEdit ? TOAST_MESSAGES.UPDATING_EXAM : TOAST_MESSAGES.ADDING_EXAM);
+            toast.loading(isEdit ? t('TOAST_MESSAGES.UPDATING_EXAM') : t('TOAST_MESSAGES.ADDING_EXAM'));
             const response = isEdit ? await editExam(params.id, values) : await addExam(values);
             if (response.success) {
                 toast.dismiss();
@@ -100,82 +101,82 @@ function AddEditExam() {
 
     return (
         <div>
-            <PageTitle title={isEdit ? ADD_EDIT_EXAM.PAGE_TITLE_EDIT : ADD_EDIT_EXAM.PAGE_TITLE_ADD} />
+            <PageTitle title={isEdit ? t('ADD_EDIT_EXAM.PAGE_TITLE_EDIT') : t('ADD_EDIT_EXAM.PAGE_TITLE_ADD')} />
             {(examData || !params.id) && (
             <Form layout="vertical" onFinish={onFinish} initialValues={examData}>
                 <Tabs defaultActiveKey="1" >
-                    <Tabs.TabPane tab={ADD_EDIT_EXAM.TABS.EXAM_DETAILS} key="1">
+                    <Tabs.TabPane tab={t('ADD_EDIT_EXAM.TABS.EXAM_DETAILS')} key="1">
                         <Row gutter={16}>
                             <Col span={8}>
-                                <Form.Item label={ADD_EDIT_EXAM.FORM_LABELS.EXAM_NAME} name="name">
-                                    <Input className='w-full input-border' type="text" placeholder={ADD_EDIT_EXAM.FORM_PLACEHOLDERS.EXAM_NAME} />
+                                <Form.Item label={t('ADD_EDIT_EXAM.FORM_LABELS.EXAM_NAME')} name="name">
+                                    <Input className='w-full input-border' type="text" placeholder={t('ADD_EDIT_EXAM.FORM_PLACEHOLDERS.EXAM_NAME')} />
                                 </Form.Item>
                             </Col>
                             <Col span={8}>
-                                <Form.Item label={ADD_EDIT_EXAM.FORM_LABELS.EXAM_DURATION} name="duration">
-                                    <Input className='w-full input-border' type="number" placeholder={ADD_EDIT_EXAM.FORM_PLACEHOLDERS.EXAM_DURATION} />
+                                <Form.Item label={t('ADD_EDIT_EXAM.FORM_LABELS.EXAM_DURATION')} name="duration">
+                                    <Input className='w-full input-border' type="number" placeholder={t('ADD_EDIT_EXAM.FORM_PLACEHOLDERS.EXAM_DURATION')} />
                                 </Form.Item>
                             </Col>
                             <Col span={8}>
-                                <Form.Item label={ADD_EDIT_EXAM.FORM_LABELS.EXAM_CATEGORY} name="category">
-                                    <Select className='w-full input-border border-rounded' placeholder={ADD_EDIT_EXAM.FORM_PLACEHOLDERS.EXAM_CATEGORY} options={[
+                                <Form.Item label={t('ADD_EDIT_EXAM.FORM_LABELS.EXAM_CATEGORY')} name="category">
+                                    <Select className='w-full input-border border-rounded' placeholder={t('ADD_EDIT_EXAM.FORM_PLACEHOLDERS.EXAM_CATEGORY')} options={[
                                         {
-                                            label: ADD_EDIT_EXAM.CATEGORY_LABELS.JAVASCRIPT,
+                                            label: t('ADD_EDIT_EXAM.CATEGORY_LABELS.JAVASCRIPT'),
                                             value: 'javascript'
                                         },
                                         {
-                                            label: ADD_EDIT_EXAM.CATEGORY_LABELS.REACT,
+                                            label: t('ADD_EDIT_EXAM.CATEGORY_LABELS.REACT'),
                                             value: 'react'
                                         },
                                         {
-                                            label: ADD_EDIT_EXAM.CATEGORY_LABELS.NODE,
+                                            label: t('ADD_EDIT_EXAM.CATEGORY_LABELS.NODE'),
                                             value: 'node'
                                         },
                                         {
-                                            label: ADD_EDIT_EXAM.CATEGORY_LABELS.MONGO,
+                                            label: t('ADD_EDIT_EXAM.CATEGORY_LABELS.MONGO'),
                                             value: 'mongodb'
                                         },
                                         {
-                                            label: ADD_EDIT_EXAM.CATEGORY_LABELS.PYTHON,
+                                            label: t('ADD_EDIT_EXAM.CATEGORY_LABELS.PYTHON'),
                                             value: 'python'
                                         }
                                     ]} />
                                 </Form.Item>
                             </Col>
                             <Col span={8}>
-                                <Form.Item label={ADD_EDIT_EXAM.FORM_LABELS.TOTAL_MARKS} name="totalMarks">
-                                    <Input type="number" placeholder={ADD_EDIT_EXAM.FORM_PLACEHOLDERS.TOTAL_MARKS} className='w-full input-border' />
+                                <Form.Item label={t('ADD_EDIT_EXAM.FORM_LABELS.TOTAL_MARKS')} name="totalMarks">
+                                    <Input type="number" placeholder={t('ADD_EDIT_EXAM.FORM_PLACEHOLDERS.TOTAL_MARKS')} className='w-full input-border' />
                                 </Form.Item>
                             </Col>
                             <Col span={8}>
-                                <Form.Item label={ADD_EDIT_EXAM.FORM_LABELS.PASSING_MARKS} name="passingMarks">
-                                    <Input type="number" placeholder={ADD_EDIT_EXAM.FORM_PLACEHOLDERS.PASSING_MARKS} className='w-full input-border' />
+                                <Form.Item label={t('ADD_EDIT_EXAM.FORM_LABELS.PASSING_MARKS')} name="passingMarks">
+                                    <Input type="number" placeholder={t('ADD_EDIT_EXAM.FORM_PLACEHOLDERS.PASSING_MARKS')} className='w-full input-border' />
                                 </Form.Item>
                             </Col>
 
                         </Row>
                         <div className='flex justify-end mt-4'>
-                            <Button type='primary' htmlType='submit'>{isEdit ? ADD_EDIT_EXAM.FORM_BUTTONS.UPDATE_EXAM : ADD_EDIT_EXAM.FORM_BUTTONS.ADD_EXAM}</Button>
+                            <Button type='primary' htmlType='submit'>{isEdit ? t('ADD_EDIT_EXAM.FORM_BUTTONS.UPDATE_EXAM') : t('ADD_EDIT_EXAM.FORM_BUTTONS.ADD_EXAM')}</Button>
                         </div>
                     </Tabs.TabPane>
                     {params.id && (
-                        <Tabs.TabPane tab={ADD_EDIT_EXAM.TABS.QUESTIONS} key="2">
+                        <Tabs.TabPane tab={t('ADD_EDIT_EXAM.TABS.QUESTIONS')} key="2">
                             <div className='flex flex-col'>
                                 <div className='flex justify-between items-center gap-4'>
-                                    <h1>{ADD_EDIT_EXAM.QUESTIONS}</h1>
-                                    <Button type='primary' onClick={handleAddQuestion}>{ADD_EDIT_EXAM.QUESTIONS_TAB.ADD_QUESTION}</Button>
+                                    <h1>{t('ADD_EDIT_EXAM.QUESTIONS')}</h1>
+                                    <Button type='primary' onClick={handleAddQuestion}>{t('ADD_EDIT_EXAM.QUESTIONS_TAB.ADD_QUESTION')}</Button>
                                 </div>
                                 <div className='allQuestions'>
                                     {allQuestions.map((question, index) => (
                                         <div key={question._id} className='allQuestions'>
-                                            <h3 className='text-lg font-bold'><span className='text-primary underline'>{ADD_EDIT_EXAM.QUESTION_MODEL.QUESTION} {index + 1}:</span> {question.question}</h3>
-                                            <p>{ADD_EDIT_EXAM.QUESTION_MODEL.OPTIONS}: {question.options.map((option, index) => <span className='flex flex-col' key={index}>{index + 1}. {option}</span>)}</p>
-                                            <p>{ADD_EDIT_EXAM.QUESTION_MODEL.ANSWER}: {question.answer}</p>
+                                            <h3 className='text-lg font-bold'><span className='text-primary underline'>{t('ADD_EDIT_EXAM.QUESTION_MODEL.QUESTION')} {index + 1}:</span> {question.question}</h3>
+                                            <p>{t('ADD_EDIT_EXAM.QUESTION_MODEL.OPTIONS')}: {question.options.map((option, index) => <span className='flex flex-col' key={index}>{index + 1}. {option}</span>)}</p>
+                                            <p>{t('ADD_EDIT_EXAM.QUESTION_MODEL.ANSWER')}: {question.answer}</p>
                                             <div className='flex justify-between items-center gap-4'>
-                                            <p>{ADD_EDIT_EXAM.QUESTION_MODEL.EXPLANATION}: {question.explanation}</p>
+                                            <p>{t('ADD_EDIT_EXAM.QUESTION_MODEL.EXPLANATION')}: {question.explanation}</p>
                                             <div className='flex justify-end gap-1'>
-                                                <Button type='primary' onClick={() => handleEditQuestion(question)}>{ADD_EDIT_EXAM.BUTTONS.EDIT}</Button>
-                                                <Button type='primary' onClick={() => handleDeleteQuestion(question._id)}>{ADD_EDIT_EXAM.BUTTONS.DELETE}</Button>
+                                                <Button type='primary' onClick={() => handleEditQuestion(question)}>{t('ADD_EDIT_EXAM.BUTTONS.EDIT')}</Button>
+                                                <Button type='primary' onClick={() => handleDeleteQuestion(question._id)}>{t('ADD_EDIT_EXAM.BUTTONS.DELETE')}</Button>
                                             </div>
                                             </div>
                                         </div>

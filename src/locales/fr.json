@@ -257,7 +257,7 @@
       },
       "RESULT": {
         "TOTAL_MARKS": "Note totale",
-        "PASS_PERCENTAGE": "Note de passage 50%",
+        "PASS_PERCENTAGE": "Note de passage",
         "MARKS_OBTAINED": "Note obtenue",
         "WRONG_ANSWERS": "Réponses incorrectes",
         "UNATTEMPTED": "Non répondu"
