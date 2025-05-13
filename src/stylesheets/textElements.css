@@ -1,0 +1,80 @@
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-lg {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-md {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.text-blue-500 {
+  color: #0000FF;
+}
+
+.bg-blue-500 {
+  background-color: var(--primary);
+}
+
+.text-white {
+  color: #FFFFFF;
+}
+
+.text-red-500 {
+  color: #FF0000;
+}
+
+.input-border {
+  border: 1px solid var(--primary);
+}
+
+.border-rounded {
+  border-radius: 7px;
+}
+
+.border-right {
+  border-right: 1px solid var(--primary);
+  padding-right: 30px;
+}
+
+
+
+
+
+
+
+
+
+

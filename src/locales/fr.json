@@ -1,0 +1,270 @@
+{
+    "APP_NAME": "Application de Quiz",
+    "QUESTION_MODEL": {
+      "QUESTION": "Question",
+      "QUESTION_PLACEHOLDER": "Entrez la question",
+      "ANSWER": "Réponse",
+      "ANSWER_PLACEHOLDER": "Entrez la réponse",
+      "EXPLANATION": "Explication",
+      "EXPLANATION_PLACEHOLDER": "Entrez l'explication",
+      "OPTIONS": "Options",
+      "FORM_MESSAGE": {
+        "QUESTION": "La question est requise",
+        "ANSWER": "La réponse est requise",
+        "EXPLANATION": "L'explication est requise"
+      },
+      "MENU": {
+        "HOME": "Accueil",
+        "EXAMS": "Examen",
+        "REPORTS": "Rapport",
+        "PROFILE": "Profil",
+        "LOGOUT": "Déconnexion"
+      },
+      "OPTIONS_PLACEHOLDER": {
+        "OPTION_1": "Entrez l'option 1",
+        "OPTION_2": "Entrez l'option 2",
+        "OPTION_3": "Entrez l'option 3",
+        "OPTION_4": "Entrez l'option 4"
+      },
+      "OPTIONS_MESSAGE": {
+        "OPTION_1": "L'option 1 est requise",
+        "OPTION_2": "L'option 2 est requise",
+        "OPTION_3": "L'option 3 est requise",
+        "OPTION_4": "L'option 4 est requise"
+      },
+      "SAVE_BUTTON": "Enregistrer",
+      "UPDATE_BUTTON": "Mettre à jour",
+      "CANCEL_BUTTON": "Annuler"
+    },
+    "TOAST_MESSAGES": {
+      "LOADING": "Chargement...",
+      "UPDATING_EXAM": "Mise à jour de l'examen...",
+      "ADDING_EXAM": "Ajout de l'examen...",
+      "UPDATING_QUESTION": "Mise à jour de la question...",
+      "ADDING_QUESTION": "Ajout de la question...",
+      "LOGGING_IN": "Connexion en cours..."
+    },
+    "ADMIN_REPORTS": {
+      "COLUMNS": {
+        "EXAM_NAME": "Nom de l'examen",
+        "USER_NAME": "Nom de l'utilisateur",
+        "CATEGORY": "Catégorie",
+        "DATE": "Date",
+        "TOTAL_MARKS": "Note totale",
+        "MARKS_OBTAINED": "Note obtenue",
+        "VERDICT": "Verdict"
+      },
+      "PAGE_TITLE": "Rapports administrateur",
+      "SEARCH_PLACEHOLDER": {
+        "EXAM": "Rechercher par examen",
+        "USER": "Rechercher par utilisateur"
+      },
+      "SEARCH_BUTTON": "Rechercher"
+    },
+    "ADD_EDIT_EXAM": {
+      "PAGE_TITLE_ADD": "Ajouter un examen",
+      "PAGE_TITLE_EDIT": "Modifier l'examen",
+      "TABS": {
+        "EXAM_DETAILS": "Détails de l'examen",
+        "QUESTIONS": "Questions"
+      },
+      "FORM_LABELS": {
+        "EXAM_NAME": "Nom de l'examen",
+        "EXAM_DURATION": "Durée de l'examen",
+        "EXAM_CATEGORY": "Catégorie",
+        "TOTAL_MARKS": "Note totale",
+        "PASSING_MARKS": "Note de passage"
+      },
+      "FORM_PLACEHOLDERS": {
+        "EXAM_NAME": "Entrez le nom de l'examen",
+        "EXAM_DURATION": "Entrez la durée de l'examen",
+        "EXAM_CATEGORY": "Sélectionnez la catégorie",
+        "TOTAL_MARKS": "Entrez la note totale",
+        "PASSING_MARKS": "Entrez la note de passage"
+      },
+      "CATEGORY_LABELS": {
+        "JAVASCRIPT": "JavaScript",
+        "REACT": "React",
+        "NODE": "Node",
+        "MONGO": "MongoDB",
+        "PYTHON": "Python"
+      },
+      "FORM_BUTTONS": {
+        "ADD_EXAM": "Ajouter l'examen",
+        "UPDATE_EXAM": "Mettre à jour l'examen"
+      },
+      "QUESTIONS_TAB": {
+        "ADD_QUESTION": "Ajouter une question",
+        "UPDATE_QUESTION": "Mettre à jour la question"
+      },
+      "QUESTIONS": "Questions",
+      "QUESTION_MODEL": {
+        "QUESTION": "Question",
+        "OPTIONS": "Options",
+        "ANSWER": "Réponse",
+        "EXPLANATION": "Explication"
+      },
+      "BUTTONS": {
+        "EDIT": "Modifier",
+        "DELETE": "Supprimer"
+      }
+    },
+    "ADMIN_EXAMS": {
+      "COLUMNS": {
+        "EXAM_NAME": "Nom de l'examen",
+        "EXAM_DURATION": "Durée de l'examen",
+        "EXAM_CATEGORY": "Catégorie",
+        "PASSING_MARKS": "Note de passage",
+        "TOTAL_MARKS": "Note totale",
+        "ACTIONS": "Actions"
+      },
+      "PAGE_TITLE": "Examens",
+      "BUTTONS": {
+        "EDIT": "Modifier",
+        "DELETE": "Supprimer",
+        "ADD_EXAM": "Ajouter un examen"
+      }
+    },
+    "HOME": {
+      "WELCOME_MESSAGE": "Bienvenue",
+      "EXAM_CARD": {
+        "EXAM_NAME": "Nom de l'examen",
+        "EXAM_DURATION": "Durée de l'examen",
+        "EXAM_CATEGORY": "Catégorie",
+        "TOTAL_QUESTIONS": "Nombre total de questions",
+        "TOTAL_MARKS": "Note totale",
+        "PASSING_MARKS": "Note de passage",
+        "CREATED_AT": "Créé le",
+        "UPDATED_AT": "Mis à jour le"
+      },
+      "BUTTONS": {
+        "START_EXAM": "Commencer l'examen"
+      }
+    },
+    "LOGIN": {
+      "PAGE_TITLE": "Connexion",
+      "FORM_LABELS": {
+        "EMAIL": "Email",
+        "PASSWORD": "Mot de passe"
+      },
+      "FORM_PLACEHOLDERS": {
+        "EMAIL": "Entrez votre email",
+        "PASSWORD": "Entrez votre mot de passe"
+      },
+      "FORM_BUTTONS": {
+        "LOGIN": "Connexion"
+      },
+      "LINK": {
+        "NEW_USER": "Nouvel utilisateur ? Inscrivez-vous"
+      }
+    },
+    "PROFILE": {
+      "PAGE_TITLE": "Profil",
+      "FORM_LABELS": {
+        "NAME": "Nom",
+        "EMAIL": "Email"
+      },
+      "FORM_PLACEHOLDERS": {
+        "NAME": "Entrez votre nom",
+        "EMAIL": "Entrez votre email"
+      },
+      "FORM_BUTTONS": {
+        "EDIT_NAME": "Modifier le nom",
+        "EDIT_EMAIL": "Modifier l'email"
+      },
+      "BUTTONS": {
+        "SAVE": "Enregistrer"
+      }
+    },
+    "REGISTER": {
+      "PAGE_TITLE": "Inscription",
+      "FORM_LABELS": {
+        "NAME": "Nom",
+        "EMAIL": "Email",
+        "PASSWORD": "Mot de passe"
+      },
+      "FORM_PLACEHOLDERS": {
+        "NAME": "Entrez votre nom",
+        "EMAIL": "Entrez votre email",
+        "PASSWORD": "Entrez votre mot de passe"
+      },
+      "FORM_BUTTONS": {
+        "REGISTER": "S'inscrire"
+      },
+      "LINK": {
+        "ALREADY_HAVE_ACCOUNT": "Vous avez déjà un compte ? Connectez-vous"
+      }
+    },
+    "USER_REPORTS": {
+      "PAGE_TITLE": "Rapports",
+      "COLUMNS": {
+        "EXAM_NAME": "Nom de l'examen",
+        "USER_NAME": "Nom de l'utilisateur",
+        "CATEGORY": "Catégorie",
+        "DATE": "Date",
+        "TOTAL_MARKS": "Note totale",
+        "MARKS_OBTAINED": "Note obtenue",
+        "VERDICT": "Verdict"
+      }
+    },
+    "USER_WRITE_EXAM": {
+      "VERDICT": {
+        "PASS": "Réussi",
+        "FAIL": "Échoué"
+      }
+    },
+    "USER_WRITE_EXAM_INSTRUCTION": {
+      "PAGE_TITLE": "Instructions",
+      "INSTRUCTIONS": {
+        "READ_INSTRUCTIONS": "Lisez attentivement les instructions",
+        "MAKE_SURE_UNDERSTAND": "Assurez-vous de comprendre les instructions avant de commencer l'examen.",
+        "EXAM_WILL_BE_CONDUCTED": "L'examen sera basé sur les questions fournies.",
+        "EXAM_MUST_BE_COMPLETED": "L'examen doit être terminé en {exam.duration} minutes.",
+        "EXAM_WILL_BE_SUBMITTED_AUTOMATICALLY": "L'examen sera soumis automatiquement après {exam.duration} minutes.",
+        "YOU_CANNOT_SUBMIT_THE_EXAM_ONCE_IT_IS_STARTED": "Vous ne pouvez pas soumettre l'examen une fois qu'il a commencé.",
+        "DO_NOT_REFRESH_THE_PAGE": "Ne rafraîchissez pas la page.",
+        "DO_NOT_CLOSE_THE_TAB": "Ne fermez pas l'onglet.",
+        "DO_NOT_USE_ANY_EXTERNAL_RESOURCES": "N'utilisez aucune ressource externe.",
+        "YOU_CAN_USE_THE_PREVIOUS_AND_NEXT_BUTTON_TO_NAVIGATE_THROUGH_THE_QUESTIONS": "Vous pouvez utiliser les boutons précédent et suivant pour naviguer entre les questions.",
+        "YOU_CANNOT_GO_BACK_TO_THE_PREVIOUS_QUESTION_ONCE_YOU_HAVE_SUBMITTED_THE_EXAM": "Vous ne pouvez pas revenir à la question précédente une fois que vous avez soumis l'examen.",
+        "TOTAL_NUMBER_OF_QUESTIONS_ARE": "Le nombre total de questions est de {exam?.questions?.length}.",
+        "EACH_QUESTION_CARRY_2_MARKS": "Chaque question vaut 2 points.",
+        "TOTAL_MARKS_ARE": "Le total des points est de {exam?.questions?.length * 2}."
+      },
+      "DECLARATION": "Je suis d'accord avec les instructions ci-dessus et souhaite commencer l'examen.",
+      "BUTTONS": {
+        "START_EXAM": "Commencer l'examen"
+      }
+    },
+    "QUESTION": {
+      "BUTTONS": {
+        "PREVIOUS": "Précédent",
+        "NEXT": "Suivant",
+        "SUBMIT": "Soumettre"
+      },
+      "PROGRESS": "Question {selectedQuestion + 1} sur {exam?.questions?.length}"
+    },
+    "USER_WRITE_EXAM_RESULT": {
+      "VERDICT": {
+        "PASS": "Réussi",
+        "FAIL": "Échoué",
+        "SUCCESS": "Succès",
+        "EXCEPTION": "Exception"
+      },
+      "VERDICT_MESSAGE": {
+        "PASS": "Félicitations ! 🎉",
+        "FAIL": "Bonne chance la prochaine fois ! 😊"
+      },
+      "RESULT": {
+        "TOTAL_MARKS": "Note totale",
+        "PASS_PERCENTAGE": "Note de passage",
+        "MARKS_OBTAINED": "Note obtenue",
+        "WRONG_ANSWERS": "Réponses incorrectes",
+        "UNATTEMPTED": "Non répondu"
+      },
+      "BUTTONS": {
+        "TRY_AGAIN": "Réessayer"
+      }
+    }
+  }
+  
